@@ -1,7 +1,6 @@
+# Introduction to Big O
 
-# Introduction to Big O {#introduction-to-big-o}
-
-## What “growth trend” means in Big (O) {#what-“growth-trend”-means-in-big-(o)}
+## What “growth trend” means in Big (O)
 
 When we say:
 
@@ -9,7 +8,7 @@ Big-O measures growth trend
 
 We mean:
 
-👉 *How fast the number of operations increases as input size (n) increases*
+👉 _How fast the number of operations increases as input size (n) increases_
 
 ---
 
@@ -31,11 +30,11 @@ Algorithm A → n operations
 
 Algorithm B → 5n operations
 
-| n | A (n) | B (5n) |
-| ----- | ----- | ----- |
-| 10 | 10 | 50 |
-| 100 | 100 | 500 |
-| 1000 | 1000 | 5000 |
+| n    | A (n) | B (5n) |
+| ---- | ----- | ------ |
+| 10   | 10    | 50     |
+| 100  | 100   | 500    |
+| 1000 | 1000  | 5000   |
 
 Yes, B is always 5× slower.
 
@@ -43,8 +42,8 @@ But notice something important:
 
 👉 When n increases → both grow linearly
 
-* 10 → 100 → 1000  
-* Work also increases in the same pattern
+- 10 → 100 → 1000
+- Work also increases in the same pattern
 
 ---
 
@@ -52,11 +51,11 @@ Now compare with a different algorithm
 
 Algorithm C → n²
 
-| n | A (n) | C (n²) |
-| ----- | ----- | ----- |
-| 10 | 10 | 100 |
-| 100 | 100 | 10,000 |
-| 1000 | 1000 | 1,000,000 |
+| n    | A (n) | C (n²)    |
+| ---- | ----- | --------- |
+| 10   | 10    | 100       |
+| 100  | 100   | 10,000    |
+| 1000 | 1000  | 1,000,000 |
 
 Now the growth is completely different:
 
@@ -68,10 +67,10 @@ So what is “exact performance”?
 
 Exact performance includes:
 
-* Constants (5n vs n)  
-* CPU speed  
-* Memory  
-* Compiler optimizations
+- Constants (5n vs n)
+- CPU speed
+- Memory
+- Compiler optimizations
 
 These vary in real-world scenarios.
 
@@ -83,8 +82,8 @@ Big-O ignores all that and focuses only on:
 
 Simple analogy
 
-* Exact performance → “This car goes 100 km/h vs 120 km/h”  
-* Growth trend → “This car doubles speed vs this one triples speed over time”
+- Exact performance → “This car goes 100 km/h vs 120 km/h”
+- Growth trend → “This car doubles speed vs this one triples speed over time”
 
 Big-O only cares about the pattern, not the exact numbers.
 
@@ -106,20 +105,20 @@ Why?
 
 Growth comparison
 
-* n² → polynomial growth (slow)  
-* 2ⁿ → exponential growth (very fast)
+- n² → polynomial growth (slow)
+- 2ⁿ → exponential growth (very fast)
 
 ---
 
 Let’s see with numbers
 
-| n | n² | 2ⁿ |
-| ----- | ----- | ----- |
-| 2 | 4 | 4 |
-| 3 | 9 | 8 |
-| 5 | 25 | 32 |
-| 10 | 100 | 1024 |
-| 20 | 400 | 1,048,576 |
+| n   | n²  | 2ⁿ        |
+| --- | --- | --------- |
+| 2   | 4   | 4         |
+| 3   | 9   | 8         |
+| 5   | 25  | 32        |
+| 10  | 100 | 1024      |
+| 20  | 400 | 1,048,576 |
 
 At first, they look close. But very quickly:
 
@@ -129,20 +128,20 @@ At first, they look close. But very quickly:
 
 Intuition
 
-* In n², you multiply n by itself → controlled growth  
-* In 2ⁿ, you double the value every time → rapid explosion
+- In n², you multiply n by itself → controlled growth
+- In 2ⁿ, you double the value every time → rapid explosion
 
 Each increase in n:
 
-* n² → adds more work gradually  
-* 2ⁿ → doubles the work every step
+- n² → adds more work gradually
+- 2ⁿ → doubles the work every step
 
 ---
 
 Big-O perspective
 
-* O(n²) → manageable for moderate inputs  
-* O(2ⁿ) → becomes impractical very quickly
+- O(n²) → manageable for moderate inputs
+- O(2ⁿ) → becomes impractical very quickly
 
 That’s why exponential algorithms are considered very inefficient for large inputs.
 
@@ -154,7 +153,7 @@ Final takeaway
 
 ---
 
-## Best Case, Average Case and Worst Case {#best-case,-average-case-and-worst-case}
+## Best Case, Average Case and Worst Case
 
 Best Case Scenario
 
@@ -177,7 +176,7 @@ The **worst case scenario** represents the maximum time or resources an algorith
 It occurs when the input is in the least favorable condition.  
  In simple terms, it shows the upper bound of the algorithm’s performance.
 
-## Sum of first n natural numbers {#sum-of-first-n-natural-numbers}
+## Sum of first n natural numbers
 
 **1 + 2 + 3 + ... + n** mean?
 
@@ -189,11 +188,11 @@ What does
 
 It represents a situation where:
 
-* First step → 1 operation  
-* Second step → 2 operations  
-* Third step → 3 operations  
-* …  
-* nth step → n operations
+- First step → 1 operation
+- Second step → 2 operations
+- Third step → 3 operations
+- …
+- nth step → n operations
 
 👉 Total work = sum of all these = **1 + 2 + 3 + ... + n**
 
@@ -203,8 +202,8 @@ The formula
 
 Instead of adding everything manually, we use:
 
-[  
-frac{n(n+1)}{2}  
+[
+frac{n(n+1)}{2}
 ]
 
 This is called the **sum of first n natural numbers**.
@@ -215,9 +214,9 @@ Why this formula works (simple intuition)
 
 Pair numbers from start and end:
 
-* (1 + n)  
-* (2 + n-1)  
-* (3 + n-2)
+- (1 + n)
+- (2 + n-1)
+- (3 + n-2)
 
 Each pair = **n + 1**
 
@@ -225,8 +224,8 @@ Number of such pairs = **n / 2**
 
 So:
 
-[  
-text{Total} = frac{n}{2} times (n+1)  
+[
+text{Total} = frac{n}{2} times (n+1)
 ]
 
 ---
@@ -239,8 +238,8 @@ If n = 5:
 
 Using formula:
 
-[  
-frac{5 times 6}{2} = 15  
+[
+frac{5 times 6}{2} = 15
 ]
 
 ---
@@ -250,17 +249,17 @@ Why this matters in algorithms
 This pattern usually appears in code like:
 
 for (let i = 1; i <= n; i++) {  
-  for (let j = 1; j <= i; j++) {  
-    // some work  
-  }  
+ for (let j = 1; j <= i; j++) {  
+ // some work  
+ }  
 }
 
 Here:
 
-* When i = 1 → 1 iteration  
-* When i = 2 → 2 iterations  
-* …  
-* When i = n → n iterations
+- When i = 1 → 1 iteration
+- When i = 2 → 2 iterations
+- …
+- When i = n → n iterations
 
 Total iterations:
 
@@ -270,8 +269,8 @@ Total iterations:
 
 Big-O simplification
 
-[  
-frac{n(n+1)}{2} = frac{n^2 + n}{2}  
+[
+frac{n(n+1)}{2} = frac{n^2 + n}{2}
 ]
 
 Ignore constants and lower terms:
@@ -290,7 +289,7 @@ it means total work grows roughly like **n²**.
 
 If you want, I can show you a quick trick to instantly recognize such patterns in interviews without doing full math.
 
-## What is a logarithm? {#what-is-a-logarithm?}
+## What is a logarithm?
 
 Intuition (very important)
 
@@ -300,7 +299,7 @@ Example:
 
 Start with 16, keep dividing by 2:
 
-* 16 → 8 → 4 → 2 → 1
+- 16 → 8 → 4 → 2 → 1
 
 That took **4 steps**
 
@@ -326,13 +325,13 @@ Basic definition
 log⁡b(x)=y  
 Means b^y=x
 
-# Recursion {#recursion}
+# Recursion
 
-## Computability theory {#computability-theory}
+## Computability theory
 
 **Computability Theory** is a branch of theoretical computer science that studies **what problems can be solved by a computer and what problems cannot be solved at all**.
 
-It focuses on the *limits of computation*.
+It focuses on the _limits of computation_.
 
 ---
 
@@ -340,9 +339,9 @@ It focuses on the *limits of computation*.
 
 Computability theory tries to answer:
 
-* Can a problem be solved using an algorithm?  
-* If yes → how?  
-* If no → why not?
+- Can a problem be solved using an algorithm?
+- If yes → how?
+- If no → why not?
 
 ---
 
@@ -359,8 +358,8 @@ Computability theory examines whether such a procedure **exists** for a given pr
 
 A **Turing Machine** is a mathematical model of a computer introduced by **Alan Turing**.
 
-* It is not a real machine, but a theoretical one.  
-* It helps define what it means for a problem to be *computable*.
+- It is not a real machine, but a theoretical one.
+- It helps define what it means for a problem to be _computable_.
 
 If a Turing machine can solve a problem → the problem is considered **computable**.
 
@@ -368,16 +367,16 @@ If a Turing machine can solve a problem → the problem is considered **computab
 
 #### 3. Decidable vs Undecidable Problems
 
-* **Decidable Problem**  
+- **Decidable Problem**  
   A problem that can always be solved by an algorithm in finite time.
 
-* **Undecidable Problem**  
+- **Undecidable Problem**  
   A problem for which **no algorithm exists** that solves all cases.
 
 Example:
 
-* The famous **Halting Problem** asks:  
-  *Will a program eventually stop or run forever?*  
+- The famous **Halting Problem** asks:  
+  _Will a program eventually stop or run forever?_  
   → This problem is **undecidable**.
 
 ---
@@ -392,13 +391,12 @@ This principle states that anything that can be computed algorithmically can be 
 
 Computability theory helps you understand:
 
-* The **limitations of software systems**  
-* Why some problems can **never be automated**  
-* Foundations of areas like:
-
-  * Compilers  
-  * Artificial Intelligence  
-  * Cryptography
+- The **limitations of software systems**
+- Why some problems can **never be automated**
+- Foundations of areas like:
+  - Compilers
+  - Artificial Intelligence
+  - Cryptography
 
 ---
 
@@ -431,9 +429,9 @@ You write a function, and someone asks:
 
 **What we do instead:**
 
-* Linters warn about *common patterns*  
-* Timeouts are added (e.g., API calls)  
-* Manual debugging
+- Linters warn about _common patterns_
+- Timeouts are added (e.g., API calls)
+- Manual debugging
 
 But **no tool can guarantee detection of all infinite loops**.
 
@@ -443,20 +441,20 @@ But **no tool can guarantee detection of all infinite loops**.
 
 Tools like ESLint, SonarQube, etc., try to detect:
 
-* Bugs  
-* Security issues  
-* Bad patterns
+- Bugs
+- Security issues
+- Bad patterns
 
 **Limitation:**  
 They **cannot catch everything**, because:
 
-* Some problems are **undecidable**  
-* They rely on heuristics, not perfect analysis
+- Some problems are **undecidable**
+- They rely on heuristics, not perfect analysis
 
 👉 That’s why:
 
-* False positives happen  
-* Some real bugs are missed
+- False positives happen
+- Some real bugs are missed
 
 ---
 
@@ -470,13 +468,13 @@ This is related to computability limits.
 
 👉 In theory:
 
-* You **cannot perfectly detect all possible malware**
+- You **cannot perfectly detect all possible malware**
 
 **What happens in practice:**
 
-* Signature-based detection  
-* Behavior analysis  
-* Sandboxing
+- Signature-based detection
+- Behavior analysis
+- Sandboxing
 
 Still, **new or obfuscated malware can bypass detection**.
 
@@ -490,9 +488,9 @@ Still, **new or obfuscated malware can bypass detection**.
 
 **Real-world impact:**
 
-* Refactoring tools cannot guarantee behavior is unchanged  
-* Code reviews are still necessary  
-* Regression testing is critical
+- Refactoring tools cannot guarantee behavior is unchanged
+- Code reviews are still necessary
+- Regression testing is critical
 
 ---
 
@@ -502,11 +500,11 @@ Even advanced AI systems cannot solve everything.
 
 Example:
 
-* Automatically generating **perfect, bug-free code for any requirement** is impossible in general
+- Automatically generating **perfect, bug-free code for any requirement** is impossible in general
 
 Because:
 
-* Some correctness questions reduce to undecidable problems
+- Some correctness questions reduce to undecidable problems
 
 ---
 
@@ -520,12 +518,11 @@ You might think:
 
 For complex systems:
 
-* Some constraints become **impossible to fully verify algorithmically**  
-* You rely on:
-
-  * Partial validation  
-  * Runtime checks  
-  * Human intervention
+- Some constraints become **impossible to fully verify algorithmically**
+- You rely on:
+  - Partial validation
+  - Runtime checks
+  - Human intervention
 
 ---
 
@@ -533,8 +530,8 @@ For complex systems:
 
 Computability theory explains **why software engineering always involves trade-offs**:
 
-* You can’t build a tool that solves *everything*  
-* You approximate, optimize, and manage risk
+- You can’t build a tool that solves _everything_
+- You approximate, optimize, and manage risk
 
 ---
 
@@ -545,13 +542,13 @@ Computability theory explains **why software engineering always involves trade-o
 
 👉 Your instinct should be:
 
-* Maybe… but **computability theory might say no**
+- Maybe… but **computability theory might say no**
 
 ---
 
 If you want, I can connect this specifically to your work (e.g., APIs, frontend validation, or system design decisions).
 
-## Computable Theory Connection With Recursion {#computable-theory-connection-with-recursion}
+## Computable Theory Connection With Recursion
 
 Computability theory and recursion are tightly connected because **recursion is one of the fundamental ways to define and perform computation**.
 
@@ -563,12 +560,12 @@ In computability theory, many functions are defined using **recursion** (functio
 
 There’s even a formal concept called **Recursive function**:
 
-* These are functions defined using base cases + recursive rules  
-* They represent **computable functions**
+- These are functions defined using base cases + recursive rules
+- They represent **computable functions**
 
 👉 In simple terms:
 
-> If a problem can be solved using well-defined recursion → it is *computable*
+> If a problem can be solved using well-defined recursion → it is _computable_
 
 ---
 
@@ -576,9 +573,9 @@ There’s even a formal concept called **Recursive function**:
 
 Even though recursion feels like a programming concept, it’s equivalent in power to a Turing machine.
 
-* Anything you write using recursion  
-  ⇄ can be simulated by a Turing machine  
-* Anything a Turing machine computes  
+- Anything you write using recursion  
+  ⇄ can be simulated by a Turing machine
+- Anything a Turing machine computes  
   ⇄ can be expressed using recursive functions
 
 This equivalence is part of the **Church-Turing Thesis**.
@@ -591,22 +588,21 @@ This is where computability theory hits real code.
 
 Example:
 
-```js  
-function loop() {  
-  return loop();  
-}  
+```js
+function loop() {
+  return loop();
+}
 ```
 
 👉 This never terminates.
 
 This connects directly to the **Halting Problem**:
 
-* You **cannot always determine** if a recursive function will stop  
-* Some recursive programs:
-
-  * terminate  
-  * some don’t  
-  * and **you can’t always predict which**
+- You **cannot always determine** if a recursive function will stop
+- Some recursive programs:
+  - terminate
+  - some don’t
+  - and **you can’t always predict which**
 
 ---
 
@@ -614,13 +610,13 @@ This connects directly to the **Halting Problem**:
 
 Every recursive function needs:
 
-* A **base case** → stopping condition  
-* A **recursive step**
+- A **base case** → stopping condition
+- A **recursive step**
 
 👉 If the base case is missing or unreachable:
 
-* The function becomes **non-terminating**  
-* The problem behaves like an **undecidable situation**
+- The function becomes **non-terminating**
+- The problem behaves like an **undecidable situation**
 
 ---
 
@@ -630,15 +626,15 @@ When you write recursion (like tree traversal, DFS, etc.):
 
 You are implicitly dealing with computability questions:
 
-* Will this always terminate?  
-* Are all cases covered?  
-* Could this loop forever?
+- Will this always terminate?
+- Are all cases covered?
+- Could this loop forever?
 
 👉 That’s why:
 
-* You carefully define base conditions  
-* You test edge cases  
-* You avoid unbounded recursion
+- You carefully define base conditions
+- You test edge cases
+- You avoid unbounded recursion
 
 ---
 
@@ -650,14 +646,14 @@ Think of recursion like asking:
 
 Computability theory asks:
 
-> “Are you *guaranteed* to eventually stop?”
+> “Are you _guaranteed_ to eventually stop?”
 
 ---
 
 ### 🔹 Key Takeaway
 
-* Recursion is a **tool to express computation**  
-* Computability theory tells you **whether that computation is even guaranteed to finish**
+- Recursion is a **tool to express computation**
+- Computability theory tells you **whether that computation is even guaranteed to finish**
 
 ---
 
@@ -673,12 +669,12 @@ The idea of recursion appeared when mathematicians started defining things **in 
 
 A classic early example is the **Factorial**:
 
-* ( n! = n × (n-1)! )  
-* Base case: ( 0! = 1 )
+- ( n! = n × (n-1)! )
+- Base case: ( 0! = 1 )
 
 👉 This is recursion in pure form:
 
-* Define a problem using a **smaller version of itself**
+- Define a problem using a **smaller version of itself**
 
 ---
 
@@ -688,8 +684,8 @@ Recursion became more formal with work by mathematicians studying computation.
 
 One key figure was **Kurt Gödel**:
 
-* Worked on formal systems and definability  
-* Helped shape the idea of **recursive definitions**
+- Worked on formal systems and definability
+- Helped shape the idea of **recursive definitions**
 
 Later, mathematicians defined **recursive (computable) functions** rigorously.
 
@@ -699,12 +695,12 @@ Later, mathematicians defined **recursive (computable) functions** rigorously.
 
 In the 1930s, recursion became central to understanding computation.
 
-* **Alonzo Church** introduced lambda calculus  
-* **Alan Turing** introduced Turing machines
+- **Alonzo Church** introduced lambda calculus
+- **Alan Turing** introduced Turing machines
 
 👉 Key insight:
 
-* Recursive functions = what computers can compute
+- Recursive functions = what computers can compute
 
 This is part of the **Church–Turing Thesis**.
 
@@ -714,12 +710,11 @@ This is part of the **Church–Turing Thesis**.
 
 Recursion entered programming languages in the 1950s–60s.
 
-* Early functional languages like **Lisp** heavily used recursion  
-* It became a natural way to process:
-
-  * Trees  
-  * Graphs  
-  * Nested structures
+- Early functional languages like **Lisp** heavily used recursion
+- It became a natural way to process:
+  - Trees
+  - Graphs
+  - Nested structures
 
 ---
 
@@ -727,23 +722,23 @@ Recursion entered programming languages in the 1950s–60s.
 
 Recursion mirrors how humans think:
 
-* Break a problem into **smaller subproblems**  
-* Solve until you reach a **simple base case**
+- Break a problem into **smaller subproblems**
+- Solve until you reach a **simple base case**
 
 That’s why it appears everywhere:
 
-* File systems (folders inside folders)  
-* UI trees (React components)  
-* Algorithms (DFS, divide & conquer)
+- File systems (folders inside folders)
+- UI trees (React components)
+- Algorithms (DFS, divide & conquer)
 
 ---
 
 ### 🔹 Simple Timeline
 
-* **Mathematics** → recursive definitions (factorial, sequences)  
-* **Logic** → formal recursive functions  
-* **Computability theory** → defines what is computable  
-* **Programming** → practical implementation
+- **Mathematics** → recursive definitions (factorial, sequences)
+- **Logic** → formal recursive functions
+- **Computability theory** → defines what is computable
+- **Programming** → practical implementation
 
 ---
 
@@ -761,29 +756,29 @@ If you want, I can connect this to **how recursion is actually implemented in me
 maximum recursion depth exceeded while calling a Python object
 
 def recursive_fn(i):  
-   print(i)  
-   recursive_fn(i + 1)  
-   return
+ print(i)  
+ recursive_fn(i + 1)  
+ return
 
 Yes—this will exceed the stack, but **not because 10,000,000 is special**. It fails much earlier.
 
 ---
 
-## 🧠 What actually happens
+### 🧠 What actually happens
 
 Your function:
 
-```python  
-def f(n):  
-    if n == 0:  
-        return  
-    f(n-1)  
+```python
+def f(n):
+    if n == 0:
+        return
+    f(n-1)
 ```
 
 If you call:
 
-```python  
-f(10_000_000)  
+```python
+f(10_000_000)
 ```
 
 ### Expected behavior (theoretical)
@@ -792,93 +787,92 @@ It would create **10 million stack frames**, then unwind.
 
 ### Reality in Python
 
-* Python has a **recursion depth limit (~1000 by default)**  
-* So it will fail around:
+- Python has a **recursion depth limit (~1000 by default)**
+- So it will fail around:
 
-```text  
-f(1000) → RecursionError  
+```text
+f(1000) → RecursionError
 ```
 
 👉 You will **never reach anywhere near 10 million**
 
 ---
 
-## 📦 Why this limit exists
+### 📦 Why this limit exists
 
 Each recursive call:
 
-* allocates a **stack frame**  
-* consumes memory (locals, return address, metadata)
+- allocates a **stack frame**
+- consumes memory (locals, return address, metadata)
 
 If Python allowed unlimited recursion:
 
-* you'd hit a **stack overflow**  
-* interpreter would crash (like in C)
+- you'd hit a **stack overflow**
+- interpreter would crash (like in C)
 
 So Python stops you early with:
 
-```text  
-RecursionError  
+```text
+RecursionError
 ```
 
 ---
 
-## ⚠️ What if you increase the limit?
+### ⚠️ What if you increase the limit?
 
-```python  
-import sys  
-sys.setrecursionlimit(10_000_000)  
+```python
+import sys
+sys.setrecursionlimit(10_000_000)
 ```
 
 This is **dangerous**.
 
 Why?
 
-* Python stack frames live on the **C stack**  
-* The OS stack size is limited (usually a few MB)  
-* 10M calls → **guaranteed crash (segmentation fault)**
+- Python stack frames live on the **C stack**
+- The OS stack size is limited (usually a few MB)
+- 10M calls → **guaranteed crash (segmentation fault)**
 
 👉 You bypass Python safety → OS kills your program
 
 ---
 
-## 🔍 Rough intuition
+### 🔍 Rough intuition
 
-* One stack frame ≈ a few hundred bytes to KB  
-* 1,000 calls → OK  
-* 100,000 calls → likely crash  
-* 10,000,000 → impossible
+- One stack frame ≈ a few hundred bytes to KB
+- 1,000 calls → OK
+- 100,000 calls → likely crash
+- 10,000,000 → impossible
 
 ---
 
-## ✅ Correct way for large `n`
+### ✅ Correct way for large `n`
 
 Use iteration:
 
-```python  
-def f(n):  
-    while n > 0:  
-        n -= 1  
+```python
+def f(n):
+    while n > 0:
+        n -= 1
 ```
 
 This uses:
 
-* **constant memory (O(1))**  
-* no stack growth
+- **constant memory (O(1))**
+- no stack growth
 
 ---
 
-## 💡 Key insight
+### 💡 Key insight
 
 Recursion depth = **stack depth**, not just "number of steps"
 
-* Recursion → memory grows with depth (O(n))  
-* Loop → memory stays constant (O(1))
+- Recursion → memory grows with depth (O(n))
+- Loop → memory stays constant (O(1))
 
 ---
 
 If you're exploring this for learning, a good next step is:
 
-* compare recursion vs iteration vs tail recursion  
-* and why Python doesn’t optimize tail recursion (important concept)
-
+- compare recursion vs iteration vs tail recursion
+- and why Python doesn’t optimize tail recursion (important concept)
