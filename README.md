@@ -179,13 +179,13 @@ It occurs when the input is in the least favorable condition.
 
 ## Sum of first n natural numbers {#sum-of-first-n-natural-numbers}
 
-**1 \+ 2 \+ 3 \+ ... \+ n** mean?
+**1 + 2 + 3 + ... + n** mean?
 
 ---
 
 What does
 
-**1 \+ 2 \+ 3 \+ ... \+ n** mean?
+**1 + 2 + 3 + ... + n** mean?
 
 It represents a situation where:
 
@@ -195,7 +195,7 @@ It represents a situation where:
 * …  
 * nth step → n operations
 
-👉 Total work \= sum of all these \= **1 \+ 2 \+ 3 \+ ... \+ n**
+👉 Total work = sum of all these = **1 + 2 + 3 + ... + n**
 
 ---
 
@@ -203,9 +203,9 @@ The formula
 
 Instead of adding everything manually, we use:
 
-\[  
-\\frac{n(n+1)}{2}  
-\]
+[  
+frac{n(n+1)}{2}  
+]
 
 This is called the **sum of first n natural numbers**.
 
@@ -215,33 +215,33 @@ Why this formula works (simple intuition)
 
 Pair numbers from start and end:
 
-* (1 \+ n)  
-* (2 \+ n-1)  
-* (3 \+ n-2)
+* (1 + n)  
+* (2 + n-1)  
+* (3 + n-2)
 
-Each pair \= **n \+ 1**
+Each pair = **n + 1**
 
-Number of such pairs \= **n / 2**
+Number of such pairs = **n / 2**
 
 So:
 
-\[  
-\\text{Total} \= \\frac{n}{2} \\times (n+1)  
-\]
+[  
+text{Total} = frac{n}{2} times (n+1)  
+]
 
 ---
 
 Example
 
-If n \= 5:
+If n = 5:
 
-1 \+ 2 \+ 3 \+ 4 \+ 5 \= 15
+1 + 2 + 3 + 4 + 5 = 15
 
 Using formula:
 
-\[  
-\\frac{5 \\times 6}{2} \= 15  
-\]
+[  
+frac{5 times 6}{2} = 15  
+]
 
 ---
 
@@ -249,30 +249,30 @@ Why this matters in algorithms
 
 This pattern usually appears in code like:
 
-for (let i \= 1; i \<= n; i++) {  
-  for (let j \= 1; j \<= i; j++) {  
+for (let i = 1; i <= n; i++) {  
+  for (let j = 1; j <= i; j++) {  
     // some work  
   }  
 }
 
 Here:
 
-* When i \= 1 → 1 iteration  
-* When i \= 2 → 2 iterations  
+* When i = 1 → 1 iteration  
+* When i = 2 → 2 iterations  
 * …  
-* When i \= n → n iterations
+* When i = n → n iterations
 
 Total iterations:
 
-👉 **1 \+ 2 \+ 3 \+ ... \+ n**
+👉 **1 + 2 + 3 + ... + n**
 
 ---
 
 Big-O simplification
 
-\[  
-\\frac{n(n+1)}{2} \= \\frac{n^2 \+ n}{2}  
-\]
+[  
+frac{n(n+1)}{2} = frac{n^2 + n}{2}  
+]
 
 Ignore constants and lower terms:
 
@@ -283,7 +283,7 @@ Ignore constants and lower terms:
 Final takeaway
 
 Whenever you see a pattern like  
-**1 \+ 2 \+ 3 \+ ... \+ n**,  
+**1 + 2 + 3 + ... + n**,  
 it means total work grows roughly like **n²**.
 
 ---
@@ -330,555 +330,555 @@ Means b^y=x
 
 ## Computability theory {#computability-theory}
 
-\*\*Computability Theory\*\* is a branch of theoretical computer science that studies \*\*what problems can be solved by a computer and what problems cannot be solved at all\*\*.
+**Computability Theory** is a branch of theoretical computer science that studies **what problems can be solved by a computer and what problems cannot be solved at all**.
 
-It focuses on the \*limits of computation\*.
+It focuses on the *limits of computation*.
 
-\---
+---
 
-\#\#\# 🔹 Core Idea
+### 🔹 Core Idea
 
 Computability theory tries to answer:
 
-\* Can a problem be solved using an algorithm?  
-\* If yes → how?  
-\* If no → why not?
+* Can a problem be solved using an algorithm?  
+* If yes → how?  
+* If no → why not?
 
-\---
+---
 
-\#\#\# 🔹 Key Concepts
+### 🔹 Key Concepts
 
-\#\#\#\# 1\. Algorithms & Computation
+#### 1. Algorithms & Computation
 
-An \*\*algorithm\*\* is a step-by-step procedure to solve a problem.  
-Computability theory examines whether such a procedure \*\*exists\*\* for a given problem.
+An **algorithm** is a step-by-step procedure to solve a problem.  
+Computability theory examines whether such a procedure **exists** for a given problem.
 
-\---
+---
 
-\#\#\#\# 2\. Turing Machine
+#### 2. Turing Machine
 
-A \*\*Turing Machine\*\* is a mathematical model of a computer introduced by \*\*Alan Turing\*\*.
+A **Turing Machine** is a mathematical model of a computer introduced by **Alan Turing**.
 
-\* It is not a real machine, but a theoretical one.  
-\* It helps define what it means for a problem to be \*computable\*.
+* It is not a real machine, but a theoretical one.  
+* It helps define what it means for a problem to be *computable*.
 
-If a Turing machine can solve a problem → the problem is considered \*\*computable\*\*.
+If a Turing machine can solve a problem → the problem is considered **computable**.
 
-\---
+---
 
-\#\#\#\# 3\. Decidable vs Undecidable Problems
+#### 3. Decidable vs Undecidable Problems
 
-\* \*\*Decidable Problem\*\*  
+* **Decidable Problem**  
   A problem that can always be solved by an algorithm in finite time.
 
-\* \*\*Undecidable Problem\*\*  
-  A problem for which \*\*no algorithm exists\*\* that solves all cases.
+* **Undecidable Problem**  
+  A problem for which **no algorithm exists** that solves all cases.
 
 Example:
 
-\* The famous \*\*Halting Problem\*\* asks:  
-  \*Will a program eventually stop or run forever?\*  
-  → This problem is \*\*undecidable\*\*.
+* The famous **Halting Problem** asks:  
+  *Will a program eventually stop or run forever?*  
+  → This problem is **undecidable**.
 
-\---
+---
 
-\#\#\#\# 4\. Church-Turing Thesis
+#### 4. Church-Turing Thesis
 
 This principle states that anything that can be computed algorithmically can be computed by a Turing machine.
 
-\---
+---
 
-\#\#\# 🔹 Why It Matters
+### 🔹 Why It Matters
 
 Computability theory helps you understand:
 
-\* The \*\*limitations of software systems\*\*  
-\* Why some problems can \*\*never be automated\*\*  
-\* Foundations of areas like:
+* The **limitations of software systems**  
+* Why some problems can **never be automated**  
+* Foundations of areas like:
 
-  \* Compilers  
-  \* Artificial Intelligence  
-  \* Cryptography
+  * Compilers  
+  * Artificial Intelligence  
+  * Cryptography
 
-\---
+---
 
-\#\#\# 🔹 Simple Analogy
+### 🔹 Simple Analogy
 
 Think of computability theory like asking:
 
-\> “Is this problem even solvable by any computer in the universe?”
+> “Is this problem even solvable by any computer in the universe?”
 
-Not how fast — just \*\*whether it’s possible at all\*\*.
+Not how fast — just **whether it’s possible at all**.
 
-\---
+---
 
-If you want, I can connect this to \*\*real-world software engineering\*\* (like why some bugs or validations can never be fully automated).
+If you want, I can connect this to **real-world software engineering** (like why some bugs or validations can never be fully automated).
 
 Computability theory can feel abstract, but it shows up in very real software engineering limits. Here are some practical examples you’ll recognize:
 
-\---
+---
 
-\#\#\# 🔹 1\. Infinite Loop Detection (Debugging Reality)
+### 🔹 1. Infinite Loop Detection (Debugging Reality)
 
-This comes directly from the \*\*Halting Problem\*\*.
+This comes directly from the **Halting Problem**.
 
-\*\*Real-world scenario:\*\*  
+**Real-world scenario:**  
 You write a function, and someone asks:
 
-\> “Can we build a tool that always tells if this code will run forever?”
+> “Can we build a tool that always tells if this code will run forever?”
 
-👉 Answer: \*\*No, not for all programs.\*\*
+👉 Answer: **No, not for all programs.**
 
-\*\*What we do instead:\*\*
+**What we do instead:**
 
-\* Linters warn about \*common patterns\*  
-\* Timeouts are added (e.g., API calls)  
-\* Manual debugging
+* Linters warn about *common patterns*  
+* Timeouts are added (e.g., API calls)  
+* Manual debugging
 
-But \*\*no tool can guarantee detection of all infinite loops\*\*.
+But **no tool can guarantee detection of all infinite loops**.
 
-\---
+---
 
-\#\#\# 🔹 2\. Static Code Analysis Tools
+### 🔹 2. Static Code Analysis Tools
 
 Tools like ESLint, SonarQube, etc., try to detect:
 
-\* Bugs  
-\* Security issues  
-\* Bad patterns
+* Bugs  
+* Security issues  
+* Bad patterns
 
-\*\*Limitation:\*\*  
-They \*\*cannot catch everything\*\*, because:
+**Limitation:**  
+They **cannot catch everything**, because:
 
-\* Some problems are \*\*undecidable\*\*  
-\* They rely on heuristics, not perfect analysis
+* Some problems are **undecidable**  
+* They rely on heuristics, not perfect analysis
 
 👉 That’s why:
 
-\* False positives happen  
-\* Some real bugs are missed
+* False positives happen  
+* Some real bugs are missed
 
-\---
+---
 
-\#\#\# 🔹 3\. Virus Detection / Malware Scanning
+### 🔹 3. Virus Detection / Malware Scanning
 
 Antivirus software tries to answer:
 
-\> “Is this program malicious?”
+> “Is this program malicious?”
 
 This is related to computability limits.
 
 👉 In theory:
 
-\* You \*\*cannot perfectly detect all possible malware\*\*
+* You **cannot perfectly detect all possible malware**
 
-\*\*What happens in practice:\*\*
+**What happens in practice:**
 
-\* Signature-based detection  
-\* Behavior analysis  
-\* Sandboxing
+* Signature-based detection  
+* Behavior analysis  
+* Sandboxing
 
-Still, \*\*new or obfuscated malware can bypass detection\*\*.
+Still, **new or obfuscated malware can bypass detection**.
 
-\---
+---
 
-\#\#\# 🔹 4\. Program Equivalence Problem
+### 🔹 4. Program Equivalence Problem
 
-\> “Do these two programs always produce the same output?”
+> “Do these two programs always produce the same output?”
 
-👉 This is \*\*undecidable\*\* in general.
+👉 This is **undecidable** in general.
 
-\*\*Real-world impact:\*\*
+**Real-world impact:**
 
-\* Refactoring tools cannot guarantee behavior is unchanged  
-\* Code reviews are still necessary  
-\* Regression testing is critical
+* Refactoring tools cannot guarantee behavior is unchanged  
+* Code reviews are still necessary  
+* Regression testing is critical
 
-\---
+---
 
-\#\#\# 🔹 5\. AI & Automation Limits
+### 🔹 5. AI & Automation Limits
 
 Even advanced AI systems cannot solve everything.
 
 Example:
 
-\* Automatically generating \*\*perfect, bug-free code for any requirement\*\* is impossible in general
+* Automatically generating **perfect, bug-free code for any requirement** is impossible in general
 
 Because:
 
-\* Some correctness questions reduce to undecidable problems
+* Some correctness questions reduce to undecidable problems
 
-\---
+---
 
-\#\#\# 🔹 6\. Input Validation & Business Rules
+### 🔹 6. Input Validation & Business Rules
 
 You might think:
 
-\> “Can I validate every possible incorrect input?”
+> “Can I validate every possible incorrect input?”
 
 👉 Not always.
 
 For complex systems:
 
-\* Some constraints become \*\*impossible to fully verify algorithmically\*\*  
-\* You rely on:
+* Some constraints become **impossible to fully verify algorithmically**  
+* You rely on:
 
-  \* Partial validation  
-  \* Runtime checks  
-  \* Human intervention
+  * Partial validation  
+  * Runtime checks  
+  * Human intervention
 
-\---
+---
 
-\#\#\# 🔹 Key Takeaway
+### 🔹 Key Takeaway
 
-Computability theory explains \*\*why software engineering always involves trade-offs\*\*:
+Computability theory explains **why software engineering always involves trade-offs**:
 
-\* You can’t build a tool that solves \*everything\*  
-\* You approximate, optimize, and manage risk
+* You can’t build a tool that solves *everything*  
+* You approximate, optimize, and manage risk
 
-\---
+---
 
-\#\#\# 🔹 Simple Mental Model
+### 🔹 Simple Mental Model
 
-\> If someone asks:  
-\> “Can we build a system that always guarantees X for every possible program/input?”
+> If someone asks:  
+> “Can we build a system that always guarantees X for every possible program/input?”
 
 👉 Your instinct should be:
 
-\* Maybe… but \*\*computability theory might say no\*\*
+* Maybe… but **computability theory might say no**
 
-\---
+---
 
 If you want, I can connect this specifically to your work (e.g., APIs, frontend validation, or system design decisions).
 
 ## Computable Theory Connection With Recursion {#computable-theory-connection-with-recursion}
 
-Computability theory and recursion are tightly connected because \*\*recursion is one of the fundamental ways to define and perform computation\*\*.
+Computability theory and recursion are tightly connected because **recursion is one of the fundamental ways to define and perform computation**.
 
-\---
+---
 
-\#\#\# 🔹 1\. Recursion \= A Model of Computation
+### 🔹 1. Recursion = A Model of Computation
 
-In computability theory, many functions are defined using \*\*recursion\*\* (functions calling themselves).
+In computability theory, many functions are defined using **recursion** (functions calling themselves).
 
-There’s even a formal concept called \*\*Recursive function\*\*:
+There’s even a formal concept called **Recursive function**:
 
-\* These are functions defined using base cases \+ recursive rules  
-\* They represent \*\*computable functions\*\*
+* These are functions defined using base cases + recursive rules  
+* They represent **computable functions**
 
 👉 In simple terms:
 
-\> If a problem can be solved using well-defined recursion → it is \*computable\*
+> If a problem can be solved using well-defined recursion → it is *computable*
 
-\---
+---
 
-\#\#\# 🔹 2\. Connection to Turing Machine
+### 🔹 2. Connection to Turing Machine
 
 Even though recursion feels like a programming concept, it’s equivalent in power to a Turing machine.
 
-\* Anything you write using recursion  
+* Anything you write using recursion  
   ⇄ can be simulated by a Turing machine  
-\* Anything a Turing machine computes  
+* Anything a Turing machine computes  
   ⇄ can be expressed using recursive functions
 
-This equivalence is part of the \*\*Church-Turing Thesis\*\*.
+This equivalence is part of the **Church-Turing Thesis**.
 
-\---
+---
 
-\#\#\# 🔹 3\. When Recursion Goes Wrong → Infinite Recursion
+### 🔹 3. When Recursion Goes Wrong → Infinite Recursion
 
 This is where computability theory hits real code.
 
 Example:
 
-\`\`\`js  
+```js  
 function loop() {  
   return loop();  
 }  
-\`\`\`
+```
 
 👉 This never terminates.
 
-This connects directly to the \*\*Halting Problem\*\*:
+This connects directly to the **Halting Problem**:
 
-\* You \*\*cannot always determine\*\* if a recursive function will stop  
-\* Some recursive programs:
+* You **cannot always determine** if a recursive function will stop  
+* Some recursive programs:
 
-  \* terminate  
-  \* some don’t  
-  \* and \*\*you can’t always predict which\*\*
+  * terminate  
+  * some don’t  
+  * and **you can’t always predict which**
 
-\---
+---
 
-\#\#\# 🔹 4\. Base Case \= Decidability in Practice
+### 🔹 4. Base Case = Decidability in Practice
 
 Every recursive function needs:
 
-\* A \*\*base case\*\* → stopping condition  
-\* A \*\*recursive step\*\*
+* A **base case** → stopping condition  
+* A **recursive step**
 
 👉 If the base case is missing or unreachable:
 
-\* The function becomes \*\*non-terminating\*\*  
-\* The problem behaves like an \*\*undecidable situation\*\*
+* The function becomes **non-terminating**  
+* The problem behaves like an **undecidable situation**
 
-\---
+---
 
-\#\#\# 🔹 5\. Real-World Developer Insight
+### 🔹 5. Real-World Developer Insight
 
 When you write recursion (like tree traversal, DFS, etc.):
 
 You are implicitly dealing with computability questions:
 
-\* Will this always terminate?  
-\* Are all cases covered?  
-\* Could this loop forever?
+* Will this always terminate?  
+* Are all cases covered?  
+* Could this loop forever?
 
 👉 That’s why:
 
-\* You carefully define base conditions  
-\* You test edge cases  
-\* You avoid unbounded recursion
+* You carefully define base conditions  
+* You test edge cases  
+* You avoid unbounded recursion
 
-\---
+---
 
-\#\#\# 🔹 Simple Analogy
+### 🔹 Simple Analogy
 
 Think of recursion like asking:
 
-\> “Keep solving smaller versions of the same problem until you can stop.”
+> “Keep solving smaller versions of the same problem until you can stop.”
 
 Computability theory asks:
 
-\> “Are you \*guaranteed\* to eventually stop?”
+> “Are you *guaranteed* to eventually stop?”
 
-\---
+---
 
-\#\#\# 🔹 Key Takeaway
+### 🔹 Key Takeaway
 
-\* Recursion is a \*\*tool to express computation\*\*  
-\* Computability theory tells you \*\*whether that computation is even guaranteed to finish\*\*
+* Recursion is a **tool to express computation**  
+* Computability theory tells you **whether that computation is even guaranteed to finish**
 
-\---
+---
 
-If you want, I can show how recursion \+ computability connects to \*\*DFS, backtracking, or API recursion patterns\*\* you might use in real projects.
+If you want, I can show how recursion + computability connects to **DFS, backtracking, or API recursion patterns** you might use in real projects.
 
-Recursion didn’t originate from programming—it actually comes from \*\*mathematics and logic\*\*, long before computers existed.
+Recursion didn’t originate from programming—it actually comes from **mathematics and logic**, long before computers existed.
 
-\---
+---
 
-\#\#\# 🔹 1\. Mathematical Origins (17th–19th Century)
+### 🔹 1. Mathematical Origins (17th–19th Century)
 
-The idea of recursion appeared when mathematicians started defining things \*\*in terms of themselves\*\*.
+The idea of recursion appeared when mathematicians started defining things **in terms of themselves**.
 
-A classic early example is the \*\*Factorial\*\*:
+A classic early example is the **Factorial**:
 
-\* ( n\! \= n × (n-1)\! )  
-\* Base case: ( 0\! \= 1 )
+* ( n! = n × (n-1)! )  
+* Base case: ( 0! = 1 )
 
 👉 This is recursion in pure form:
 
-\* Define a problem using a \*\*smaller version of itself\*\*
+* Define a problem using a **smaller version of itself**
 
-\---
+---
 
-\#\#\# 🔹 2\. Formalization in Logic
+### 🔹 2. Formalization in Logic
 
 Recursion became more formal with work by mathematicians studying computation.
 
-One key figure was \*\*Kurt Gödel\*\*:
+One key figure was **Kurt Gödel**:
 
-\* Worked on formal systems and definability  
-\* Helped shape the idea of \*\*recursive definitions\*\*
+* Worked on formal systems and definability  
+* Helped shape the idea of **recursive definitions**
 
-Later, mathematicians defined \*\*recursive (computable) functions\*\* rigorously.
+Later, mathematicians defined **recursive (computable) functions** rigorously.
 
-\---
+---
 
-\#\#\# 🔹 3\. Connection to Computability Theory
+### 🔹 3. Connection to Computability Theory
 
 In the 1930s, recursion became central to understanding computation.
 
-\* \*\*Alonzo Church\*\* introduced lambda calculus  
-\* \*\*Alan Turing\*\* introduced Turing machines
+* **Alonzo Church** introduced lambda calculus  
+* **Alan Turing** introduced Turing machines
 
 👉 Key insight:
 
-\* Recursive functions \= what computers can compute
+* Recursive functions = what computers can compute
 
-This is part of the \*\*Church–Turing Thesis\*\*.
+This is part of the **Church–Turing Thesis**.
 
-\---
+---
 
-\#\#\# 🔹 4\. Entry into Programming
+### 🔹 4. Entry into Programming
 
 Recursion entered programming languages in the 1950s–60s.
 
-\* Early functional languages like \*\*Lisp\*\* heavily used recursion  
-\* It became a natural way to process:
+* Early functional languages like **Lisp** heavily used recursion  
+* It became a natural way to process:
 
-  \* Trees  
-  \* Graphs  
-  \* Nested structures
+  * Trees  
+  * Graphs  
+  * Nested structures
 
-\---
+---
 
-\#\#\# 🔹 5\. Why Recursion Felt Natural
+### 🔹 5. Why Recursion Felt Natural
 
 Recursion mirrors how humans think:
 
-\* Break a problem into \*\*smaller subproblems\*\*  
-\* Solve until you reach a \*\*simple base case\*\*
+* Break a problem into **smaller subproblems**  
+* Solve until you reach a **simple base case**
 
 That’s why it appears everywhere:
 
-\* File systems (folders inside folders)  
-\* UI trees (React components)  
-\* Algorithms (DFS, divide & conquer)
+* File systems (folders inside folders)  
+* UI trees (React components)  
+* Algorithms (DFS, divide & conquer)
 
-\---
+---
 
-\#\#\# 🔹 Simple Timeline
+### 🔹 Simple Timeline
 
-\* \*\*Mathematics\*\* → recursive definitions (factorial, sequences)  
-\* \*\*Logic\*\* → formal recursive functions  
-\* \*\*Computability theory\*\* → defines what is computable  
-\* \*\*Programming\*\* → practical implementation
+* **Mathematics** → recursive definitions (factorial, sequences)  
+* **Logic** → formal recursive functions  
+* **Computability theory** → defines what is computable  
+* **Programming** → practical implementation
 
-\---
+---
 
-\#\#\# 🔹 Key Takeaway
+### 🔹 Key Takeaway
 
-\> Recursion started as a \*\*mathematical way of defining problems\*\*,  
-\> and later became a \*\*core tool for programming and computation\*\*.
+> Recursion started as a **mathematical way of defining problems**,  
+> and later became a **core tool for programming and computation**.
 
-\---
+---
 
-If you want, I can connect this to \*\*how recursion is actually implemented in memory (call stack)\*\*—that’s where theory meets real execution.
+If you want, I can connect this to **how recursion is actually implemented in memory (call stack)**—that’s where theory meets real execution.
 
 ## RecursionError
 
 maximum recursion depth exceeded while calling a Python object
 
-def recursive\_fn(i):  
+def recursive_fn(i):  
    print(i)  
-   recursive\_fn(i \+ 1)  
+   recursive_fn(i + 1)  
    return
 
-Yes—this will exceed the stack, but \*\*not because 10,000,000 is special\*\*. It fails much earlier.
+Yes—this will exceed the stack, but **not because 10,000,000 is special**. It fails much earlier.
 
-\---
+---
 
-\#\# 🧠 What actually happens
+## 🧠 What actually happens
 
 Your function:
 
-\`\`\`python  
+```python  
 def f(n):  
-    if n \== 0:  
+    if n == 0:  
         return  
     f(n-1)  
-\`\`\`
+```
 
 If you call:
 
-\`\`\`python  
-f(10\_000\_000)  
-\`\`\`
+```python  
+f(10_000_000)  
+```
 
-\#\#\# Expected behavior (theoretical)
+### Expected behavior (theoretical)
 
-It would create \*\*10 million stack frames\*\*, then unwind.
+It would create **10 million stack frames**, then unwind.
 
-\#\#\# Reality in Python
+### Reality in Python
 
-\* Python has a \*\*recursion depth limit (\~1000 by default)\*\*  
-\* So it will fail around:
+* Python has a **recursion depth limit (~1000 by default)**  
+* So it will fail around:
 
-\`\`\`text  
+```text  
 f(1000) → RecursionError  
-\`\`\`
+```
 
-👉 You will \*\*never reach anywhere near 10 million\*\*
+👉 You will **never reach anywhere near 10 million**
 
-\---
+---
 
-\#\# 📦 Why this limit exists
+## 📦 Why this limit exists
 
 Each recursive call:
 
-\* allocates a \*\*stack frame\*\*  
-\* consumes memory (locals, return address, metadata)
+* allocates a **stack frame**  
+* consumes memory (locals, return address, metadata)
 
 If Python allowed unlimited recursion:
 
-\* you'd hit a \*\*stack overflow\*\*  
-\* interpreter would crash (like in C)
+* you'd hit a **stack overflow**  
+* interpreter would crash (like in C)
 
 So Python stops you early with:
 
-\`\`\`text  
+```text  
 RecursionError  
-\`\`\`
+```
 
-\---
+---
 
-\#\# ⚠️ What if you increase the limit?
+## ⚠️ What if you increase the limit?
 
-\`\`\`python  
+```python  
 import sys  
-sys.setrecursionlimit(10\_000\_000)  
-\`\`\`
+sys.setrecursionlimit(10_000_000)  
+```
 
-This is \*\*dangerous\*\*.
+This is **dangerous**.
 
 Why?
 
-\* Python stack frames live on the \*\*C stack\*\*  
-\* The OS stack size is limited (usually a few MB)  
-\* 10M calls → \*\*guaranteed crash (segmentation fault)\*\*
+* Python stack frames live on the **C stack**  
+* The OS stack size is limited (usually a few MB)  
+* 10M calls → **guaranteed crash (segmentation fault)**
 
 👉 You bypass Python safety → OS kills your program
 
-\---
+---
 
-\#\# 🔍 Rough intuition
+## 🔍 Rough intuition
 
-\* One stack frame ≈ a few hundred bytes to KB  
-\* 1,000 calls → OK  
-\* 100,000 calls → likely crash  
-\* 10,000,000 → impossible
+* One stack frame ≈ a few hundred bytes to KB  
+* 1,000 calls → OK  
+* 100,000 calls → likely crash  
+* 10,000,000 → impossible
 
-\---
+---
 
-\#\# ✅ Correct way for large \`n\`
+## ✅ Correct way for large `n`
 
 Use iteration:
 
-\`\`\`python  
+```python  
 def f(n):  
-    while n \> 0:  
-        n \-= 1  
-\`\`\`
+    while n > 0:  
+        n -= 1  
+```
 
 This uses:
 
-\* \*\*constant memory (O(1))\*\*  
-\* no stack growth
+* **constant memory (O(1))**  
+* no stack growth
 
-\---
+---
 
-\#\# 💡 Key insight
+## 💡 Key insight
 
-Recursion depth \= \*\*stack depth\*\*, not just "number of steps"
+Recursion depth = **stack depth**, not just "number of steps"
 
-\* Recursion → memory grows with depth (O(n))  
-\* Loop → memory stays constant (O(1))
+* Recursion → memory grows with depth (O(n))  
+* Loop → memory stays constant (O(1))
 
-\---
+---
 
 If you're exploring this for learning, a good next step is:
 
-\* compare recursion vs iteration vs tail recursion  
-\* and why Python doesn’t optimize tail recursion (important concept)
+* compare recursion vs iteration vs tail recursion  
+* and why Python doesn’t optimize tail recursion (important concept)
 
