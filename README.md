@@ -1,3 +1,17 @@
+# Table of Contents
+
+- [Introduction to Big O](#introduction-to-big-o)
+  - [What "growth trend" means in Big (O)](#what-growth-trend-means-in-big-o)
+  - [Best Case, Average Case and Worst Case](#best-case-average-case-and-worst-case)
+  - [Sum of first n natural numbers](#sum-of-first-n-natural-numbers)
+  - [What is a logarithm?](#what-is-a-logarithm)
+- [Recursion](#recursion)
+  - [Computability theory](#computability-theory)
+  - [Computable Theory Connection With Recursion](#computable-theory-connection-with-recursion)
+  - [RecursionError](#recursionerror)
+
+---
+
 # Introduction to Big O
 
 ## What “growth trend” means in Big (O)
