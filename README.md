@@ -1,7 +1,7 @@
 # Table of Contents
 
 - [Introduction to Big O](#introduction-to-big-o)
-  - [What "growth trend" means in Big (O)](#what-growth-trend-means-in-big-o)
+  - [What “growth trend” means in Big (O)](#what-growth-trend-means-in-big-o)
   - [Best Case, Average Case and Worst Case](#best-case-average-case-and-worst-case)
   - [Sum of first n natural numbers](#sum-of-first-n-natural-numbers)
   - [What is a logarithm?](#what-is-a-logarithm)
@@ -9,6 +9,8 @@
   - [Computability theory](#computability-theory)
   - [Computable Theory Connection With Recursion](#computable-theory-connection-with-recursion)
   - [RecursionError](#recursionerror)
+  - [🔢 What is Fibonacci?](#what-is-fibonacci)
+  - [Fibonacci Expansion for fib(5)](#fibonacci-expansion-for-fib5)
 
 ---
 
@@ -1049,6 +1051,8 @@ Got it — you want a **clean copy format** with a single `##` header and everyt
 ---
 
 ## Fibonacci Expansion for fib(5)
+
+![Fibonacci Expansion](hand-notes/fibonacci.png)
 
 fib(5)
 = fib(4) + fib(3)
