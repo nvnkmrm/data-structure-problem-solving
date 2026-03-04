@@ -1078,3 +1078,62 @@ fib(0) = 0
 = 5
 
 ---
+
+## Recurrence Relation
+
+### Definition
+
+A recurrence relation is a way to define a value using previous values of the same problem.
+
+### Simple Explanation
+
+Instead of solving a problem directly, you express it in terms of smaller versions of itself.
+
+### Example (Fibonacci)
+
+F(n) = F(n−1) + F(n−2)
+
+#### Base Cases
+
+F(0) = 0
+F(1) = 1
+
+Each value depends on earlier values — this is a recurrence relation.
+
+### General Form
+
+T(n) = something involving T(n−1), T(n−2), ...
+
+### Components
+
+#### Recursive Case
+
+How the current value depends on previous values
+
+#### Base Case
+
+Stopping condition
+
+### Examples in Algorithms
+
+#### Factorial
+
+n! = n × (n−1)!
+
+Base case: 0! = 1
+
+#### Binary Search
+
+T(n) = T(n/2) + 1
+
+#### Merge Sort
+
+T(n) = 2T(n/2) + n
+
+### Why It Matters
+
+It helps describe recursive algorithms, analyze time complexity, and understand dynamic programming.
+
+### Intuition
+
+To solve a big problem, break it into smaller problems of the same type.
