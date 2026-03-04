@@ -897,7 +897,7 @@ The **Fibonacci sequence** is one of the simplest and most important examples to
 
 ---
 
-## 🔢 What is Fibonacci?
+## What is Fibonacci?
 
 The sequence is defined as:
 
