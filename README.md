@@ -890,3 +890,187 @@ If you're exploring this for learning, a good next step is:
 
 - compare recursion vs iteration vs tail recursion
 - and why Python doesn’t optimize tail recursion (important concept)
+
+The **Fibonacci sequence** is one of the simplest and most important examples to understand recursion, iteration, and algorithm efficiency.
+
+---
+
+## 🔢 What is Fibonacci?
+
+The sequence is defined as:
+
+- F(0) = 0
+- F(1) = 1
+- F(n) = F(n-1) + F(n-2)
+
+So it looks like:
+
+`0, 1, 1, 2, 3, 5, 8, 13, 21, ...`
+
+---
+
+### 🧠 1. Recursive Algorithm (Naive)
+
+This directly follows the mathematical definition.
+
+```python
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+```
+
+### 🔍 How it works
+
+To compute `fib(5)`:
+
+```
+fib(5)
+= fib(4) + fib(3)
+= (fib(3)+fib(2)) + (fib(2)+fib(1))
+...
+```
+
+#### ❌ Problem
+
+- Recomputes same values many times
+- Time Complexity: **O(2ⁿ)** (very slow)
+- Space Complexity: **O(n)** (recursion stack)
+
+---
+
+### ⚡ 2. Optimized Recursion (Memoization)
+
+We store already computed results.
+
+```python
+def fib(n, memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 1:
+        return n
+
+    memo[n] = fib(n-1, memo) + fib(n-2, memo)
+    return memo[n]
+```
+
+#### ✅ Benefits
+
+- Avoids recomputation
+- Time Complexity: **O(n)**
+- Space Complexity: **O(n)**
+
+---
+
+### 🔁 3. Iterative Approach (Best for most cases)
+
+```python
+def fib(n):
+    if n <= 1:
+        return n
+
+    a, b = 0, 1
+    for _ in range(2, n+1):
+        a, b = b, a + b
+
+    return b
+```
+
+#### ✅ Why this is best
+
+- No recursion overhead
+- Time Complexity: **O(n)**
+- Space Complexity: **O(1)**
+
+---
+
+### 🚀 4. Advanced (Matrix / Fast Doubling)
+
+Used in high-performance systems.
+
+- Time Complexity: **O(log n)**
+- Based on mathematical properties of Fibonacci
+
+Example (fast doubling):
+
+```python
+def fib(n):
+    def helper(n):
+        if n == 0:
+            return (0, 1)
+
+        a, b = helper(n // 2)
+        c = a * (2*b - a)
+        d = a*a + b*b
+
+        if n % 2 == 0:
+            return (c, d)
+        else:
+            return (d, c + d)
+
+    return helper(n)[0]
+```
+
+---
+
+### 🧩 When to use what?
+
+| Approach      | Use Case                           |
+| ------------- | ---------------------------------- |
+| Recursion     | Learning / interviews              |
+| Memoization   | When recursion is required         |
+| Iteration     | Real-world coding (most practical) |
+| Fast Doubling | Very large `n` (e.g., 10⁶+)        |
+
+---
+
+### 💡 Intuition (Important)
+
+Fibonacci is basically:
+
+> “Each value depends on the previous two values.”
+
+That’s why:
+
+- It’s a classic example for **recursion**
+- It introduces **dynamic programming**
+- It helps understand **time vs space trade-offs**
+
+---
+
+If you want, I can next:
+
+- Visualize the recursion tree (very useful)
+- Show how this relates to **dynamic programming**
+- Or connect Fibonacci to **real-world systems (like caching, trees, etc.)**
+
+Got it — you want a **clean copy format** with a single `##` header and everything else as plain text (no extra markdown blocks or code fences). Here you go:
+
+---
+
+## Fibonacci Expansion for fib(5)
+
+fib(5)
+= fib(4) + fib(3)
+
+= (fib(3) + fib(2)) + (fib(2) + fib(1))
+
+= ((fib(2) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))
+
+= (((fib(1) + fib(0)) + fib(1)) + (fib(1) + fib(0))) + ((fib(1) + fib(0)) + fib(1))
+
+Now substitute base values:
+fib(1) = 1
+fib(0) = 0
+
+= (((1 + 0) + 1) + (1 + 0)) + ((1 + 0) + 1)
+
+= ((1 + 1) + 1) + (1 + 1)
+
+= (2 + 1) + 2
+
+= 3 + 2
+
+= 5
+
+---
