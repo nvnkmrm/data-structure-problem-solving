@@ -12,6 +12,8 @@
   - [What is Fibonacci?](#what-is-fibonacci)
   - [Fibonacci Expansion for fib(5)](#fibonacci-expansion-for-fib5)
   - [Recurrence Relation](#recurrence-relation)
+- [Arrays and strings](#arrays-and-strings)
+  - [Strings are Immutable](#strings-are-immutable)
 
 ---
 
@@ -1138,3 +1140,47 @@ It helps describe recursive algorithms, analyze time complexity, and understand 
 ### Intuition
 
 To solve a big problem, break it into smaller problems of the same type.
+
+# Arrays and strings
+
+## Strings are Immutable
+
+In Python, **strings are immutable**.
+
+That means once a string is created, **you cannot change its content in place**.
+
+### Example
+
+```python
+s = "hello"
+s[0] = "H"   # ❌ This will raise an error
+```
+
+You’ll get:
+
+```
+TypeError: 'str' object does not support item assignment
+```
+
+---
+
+### What you do instead
+
+You create a **new string**:
+
+```python
+s = "hello"
+s = "H" + s[1:]
+print(s)  # "Hello"
+```
+
+### Why strings are immutable
+
+- Memory efficiency (can reuse objects)
+- Safer (no accidental modification)
+- Faster in many internal operations (like hashing for dictionaries)
+
+### Key takeaway
+
+- **Mutable** → can change (e.g., `list`, `dict`)
+- **Immutable** → cannot change (e.g., `str`, `tuple`, `int`)
