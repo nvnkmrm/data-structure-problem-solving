@@ -9,8 +9,9 @@
   - [Computability theory](#computability-theory)
   - [Computable Theory Connection With Recursion](#computable-theory-connection-with-recursion)
   - [RecursionError](#recursionerror)
-  - [🔢 What is Fibonacci?](#what-is-fibonacci)
+  - [What is Fibonacci?](#what-is-fibonacci)
   - [Fibonacci Expansion for fib(5)](#fibonacci-expansion-for-fib5)
+  - [Recurrence Relation](#recurrence-relation)
 
 ---
 
