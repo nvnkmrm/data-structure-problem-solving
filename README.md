@@ -1184,3 +1184,126 @@ print(s)  # "Hello"
 
 - **Mutable** → can change (e.g., `list`, `dict`)
 - **Immutable** → cannot change (e.g., `str`, `tuple`, `int`)
+
+When people say **arrays (1D) and strings are very similar in algorithm problems**, they mean that **both are ordered sequences of elements**, so many algorithms work on them in the same way.
+
+Let's break it down.
+
+---
+
+## Why Array and String are Ordered Group of Elements
+
+### 1. Ordered Group of Elements
+
+An **ordered group** means the elements have a **fixed position (index)**.
+
+Example:
+
+Array:
+
+```
+[10, 20, 30, 40]
+ 0   1   2   3
+```
+
+String:
+
+```
+"CODE"
+ 0 1 2 3
+```
+
+Both:
+
+- Have **indexes**
+- Can access elements using index
+- Maintain **order**
+
+Example operations:
+
+```
+arr[2] → 30
+str[2] → 'D'
+```
+
+So algorithmically, they behave similarly.
+
+---
+
+### 2. Both Allow Traversal
+
+You usually solve problems by **iterating through elements**.
+
+Example:
+
+Array
+
+```python
+for i in range(len(arr)):
+    print(arr[i])
+```
+
+String
+
+```python
+for i in range(len(s)):
+    print(s[i])
+```
+
+Same pattern.
+
+---
+
+### 3. Many Algorithms Work on Both
+
+Common algorithm techniques apply to **both arrays and strings**:
+
+| Technique      | Example (Array)      | Example (String)        |
+| -------------- | -------------------- | ----------------------- |
+| Traversal      | find max element     | count vowels            |
+| Two pointers   | pair sum             | palindrome check        |
+| Sliding window | subarray sum         | longest substring       |
+| Hashing        | frequency of numbers | frequency of characters |
+
+Example:
+
+Palindrome check:
+
+```
+s = "madam"
+```
+
+Using two pointers:
+
+```
+left = 0
+right = len(s) - 1
+```
+
+Same technique can be used on an array.
+
+---
+
+### 4. The Only Major Difference
+
+| Array                  | String                                 |
+| ---------------------- | -------------------------------------- |
+| stores numbers/objects | stores characters                      |
+| usually mutable        | usually immutable (Python, Java, etc.) |
+
+Example in Python:
+
+```
+arr[0] = 100   ✅ allowed
+s[0] = 'A'     ❌ not allowed
+```
+
+But **algorithmically they are still treated similarly**.
+
+---
+
+✅ **Simple definition**
+
+> Arrays and strings are both **ordered collections of elements that can be accessed by index**, so many algorithm techniques apply to both.
+
+---
