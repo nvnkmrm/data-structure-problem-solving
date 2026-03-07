@@ -14,6 +14,8 @@
   - [Recurrence Relation](#recurrence-relation)
 - [Arrays and strings](#arrays-and-strings)
   - [Strings are Immutable](#strings-are-immutable)
+  - [Why Array and String are Ordered Group of Elements](#why-array-and-string-are-ordered-group-of-elements)
+  - [Appending to the end of a list is amortized O(1)](#appending-to-the-end-of-a-list-is-amortized-o1)
 
 ---
 
