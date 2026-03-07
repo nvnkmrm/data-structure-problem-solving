@@ -1307,3 +1307,125 @@ But **algorithmically they are still treated similarly**.
 > Arrays and strings are both **ordered collections of elements that can be accessed by index**, so many algorithm techniques apply to both.
 
 ---
+
+## Appending to the end of a list is amortized O(1)
+
+When someone says **“Appending to the end of a list is amortized O(1)”**, they mean:
+
+> On **average**, adding an element to the end of a list takes **constant time**, even though **some individual operations may take longer**.
+
+Let’s break it down.
+
+---
+
+### 1. Normal Append (O(1))
+
+In languages like **Python**, when you do:
+
+```python
+arr = []
+arr.append(10)
+arr.append(20)
+```
+
+The list internally has **extra unused capacity**.
+
+Example internal structure:
+
+```
+Capacity: 8
+Size: 3
+[1, 2, 3, _, _, _, _, _]
+```
+
+If there is **free space**, the element is simply placed at the next index.
+
+```
+[1, 2, 3, 4, _, _, _, _]
+```
+
+This operation takes **constant time → O(1)**.
+
+---
+
+### 2. When the List Becomes Full
+
+Sometimes the list **runs out of space**.
+
+Example:
+
+```
+Capacity: 4
+Size: 4
+[1,2,3,4]
+```
+
+If we append:
+
+```python
+arr.append(5)
+```
+
+The system must:
+
+1. Allocate a **larger array** (usually 2× size)
+2. Copy all elements
+3. Add the new element
+
+Example:
+
+```
+Old: [1,2,3,4]
+New: [1,2,3,4,5,_,_,_]
+```
+
+This step costs **O(n)** because all elements are copied.
+
+---
+
+### 3. Why It Is Still “Amortized O(1)”
+
+The expensive **resize operation happens rarely**.
+
+Example sequence of appends:
+
+| Operation         | Cost |
+| ----------------- | ---- |
+| append 1          | O(1) |
+| append 2          | O(1) |
+| append 3          | O(1) |
+| append 4          | O(1) |
+| append 5 (resize) | O(n) |
+| append 6          | O(1) |
+| append 7          | O(1) |
+
+If you append **1000 elements**, resizing may happen **only ~10 times**.
+
+So the **total cost spread over all operations** becomes:
+
+[
+\text{Average cost per append} = O(1)
+]
+
+This is called **amortized analysis**.
+
+---
+
+### 4. Simple Analogy
+
+Think of a **notebook**.
+
+- Writing on the next page → **fast**
+- When notebook is full → **buy a new bigger notebook and copy notes**
+
+Buying happens **rarely**, so **average writing time per note is still constant**.
+
+---
+
+✅ **Final meaning**
+
+> **Appending to a list is amortized O(1)** means that although **some appends take O(n)** due to resizing, **the average time per append across many operations is constant**.
+
+---
+
+If you'd like, I can also show a **visual step-by-step memory growth of a Python list (0 → 1 → 2 → 4 → 8 → 16)** which makes this concept extremely clear for algorithm interviews.
