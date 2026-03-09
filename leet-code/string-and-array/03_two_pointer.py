@@ -17,8 +17,8 @@
 #             2. right--
 #             3. Both left++ and right--
 
-def palindrome(input):
-    arr = list(input)
+def palindrome(s : str) -> bool:
+    arr = list(s)
     i = 0
     j = len(arr)-1
 
