@@ -18,12 +18,11 @@
 #             3. Both left++ and right--
 
 def palindrome(s : str) -> bool:
-    arr = list(s)
     i = 0
-    j = len(arr)-1
+    j = len(s)-1
 
     while i < j:
-        if arr[i] != arr[j]:
+        if s[i] != s[j]:
             return False
         i += 1
         j -= 1
