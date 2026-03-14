@@ -14,16 +14,14 @@
 # Output: false
 
 def is_subsequence(str1, str2):
-    pointer = 0
+    i = j = 0
 
-    for i in range(len(str2)):
-        if pointer < len(str1) and str1[pointer] == str2[i]:
-            pointer += 1
+    while i < len(str1) and j < len(str2):
+        if str1[i] == str2[j]:
+            i += 1
+        j += 1
 
-    if pointer == len(str1):
-        return True
-
-    return False
+    return i == len(str1)
 
 if __name__ == "__main__":
-    print(is_subsequence("ax", "abczxc"))
+    print(is_subsequence("abcc", "abczxc"))
