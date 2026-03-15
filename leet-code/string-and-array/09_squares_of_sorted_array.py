@@ -23,20 +23,20 @@
 
 
 def squares_of_sorted_array(nums: list[int]) -> list[int]:
-    l = 0
-    r = len(nums) - 1
-    p = r
+    left = 0
+    right = len(nums) - 1
+    pos = right
     result = [0] * len(nums)
 
-    while (l <= r):
+    while left <= right:
 
-        if abs(nums[l]) < abs(nums[r]):
-            result[p] = nums[r] * nums[r]
-            r -= 1
+        if abs(nums[left]) < abs(nums[right]):
+            result[pos] = nums[right] * nums[right]
+            right -= 1
         else:
-            result[p] = nums[l] * nums[l]
-            l += 1
-        p -= 1
+            result[pos] = nums[left] * nums[left]
+            left += 1
+        pos -= 1
 
     return result
 
