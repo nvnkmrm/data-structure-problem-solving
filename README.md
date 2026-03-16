@@ -16,6 +16,7 @@
   - [Strings are Immutable](#strings-are-immutable)
   - [Why Array and String are Ordered Group of Elements](#why-array-and-string-are-ordered-group-of-elements)
   - [Appending to the end of a list is amortized O(1)](#appending-to-the-end-of-a-list-is-amortized-o1)
+  - [Why Sliding Window is O(n)](#why-sliding-window-is-on)
 
 ---
 
@@ -1431,3 +1432,30 @@ Buying happens **rarely**, so **average writing time per note is still constant*
 ---
 
 If you'd like, I can also show a **visual step-by-step memory growth of a Python list (0 → 1 → 2 → 4 → 8 → 16)** which makes this concept extremely clear for algorithm interviews.
+
+## Why Sliding Window is O(n)
+
+Why It Is Still O(n) Even With Two Pointers
+
+Many sliding window algorithms use two pointers:
+
+left = 0
+for right in range(n):
+while window_invalid:
+left += 1
+
+At first glance it looks like nested loops, but actually:
+
+right moves n times
+
+left also moves at most n times
+
+So total pointer movements:
+
+right pointer -> n
+left pointer -> n
+Total -> 2n
+
+Big-O ignores constants:
+
+O(2n) → O(n)
