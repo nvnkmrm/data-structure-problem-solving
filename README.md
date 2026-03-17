@@ -1636,9 +1636,3 @@ end index
 ```
 
 Number of ways to choose `(start, end)` = **n(n+1)/2**
-
----
-
-If you'd like, I can also show a **very powerful interview trick**:
-
-👉 **Why every element contributes `(i+1)(n-i)` times in subarrays** (used in advanced subarray problems). This appears a lot in system design / DSA interviews.
