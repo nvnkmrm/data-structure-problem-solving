@@ -17,6 +17,7 @@
   - [Why Array and String are Ordered Group of Elements](#why-array-and-string-are-ordered-group-of-elements)
   - [Appending to the end of a list is amortized O(1)](#appending-to-the-end-of-a-list-is-amortized-o1)
   - [Why Sliding Window is O(n)](#why-sliding-window-is-on)
+  - [Numbers of sub arrays in an array](#numbers-of-sub-arrays-in-an-array)
 
 ---
 
