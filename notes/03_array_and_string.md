@@ -271,9 +271,9 @@ If you append **1000 elements**, resizing may happen **only ~10 times**.
 
 So the **total cost spread over all operations** becomes:
 
-[
+$$
 \text{Average cost per append} = O(1)
-]
+$$
 
 This is called **amortized analysis**.
 
@@ -325,178 +325,65 @@ Big-O ignores constants:
 
 O(2n) → O(n)
 
-## Numbers of sub arrays in an array
+## Total Number of Subarrays in an Array
 
-They are explaining **how many total subarrays exist in an array of length `n`** and why the answer is
+For an array of length **n**, the total number of subarrays is:
 
-[
-\frac{n(n+1)}{2}
-]
-
-Let’s break it step-by-step.
+```
+n * (n + 1) / 2
+```
 
 ---
 
-### 1. What is a Subarray?
+## Explanation
 
-A **subarray** is a **continuous part of the array**.
+A subarray is a **contiguous part of an array**.
 
-Example:
-Array = `[1,2,3]`
+For an array of length **n**:
 
-Subarrays:
+```
+Length 1 subarrays → n
+Length 2 subarrays → n - 1
+Length 3 subarrays → n - 2
+...
+Length n subarrays → 1
+```
 
-- `[1]`
-- `[2]`
-- `[3]`
-- `[1,2]`
-- `[2,3]`
-- `[1,2,3]`
+Total:
 
-Total = **6**
+```
+n + (n - 1) + (n - 2) + ... + 1
+```
+
+This is the **sum of the first n natural numbers**, which equals:
+
+```
+n * (n + 1) / 2
+```
 
 ---
 
-### 2. Count subarrays by their length
+## Example
 
-If the array length is **n**, we count subarrays by size.
-
-#### Length = 1
-
-Every element alone.
+Array:
 
 ```
-[1], [2], [3], ...
-```
-
-Number of subarrays = **n**
-
----
-
-#### Length = 2
-
-Pairs of consecutive elements.
-
-```
-[1,2], [2,3], [3,4] ...
-```
-
-Number of subarrays = **n - 1**
-
-Because the **last element cannot start a length-2 subarray**.
-
----
-
-#### Length = 3
-
-```
-[1,2,3], [2,3,4] ...
-```
-
-Number of subarrays = **n - 2**
-
----
-
-#### Continue this pattern
-
-| Length | Number of subarrays |
-| ------ | ------------------- |
-| 1      | n                   |
-| 2      | n-1                 |
-| 3      | n-2                 |
-| ...    | ...                 |
-| n      | 1                   |
-
----
-
-### 3. Add them all
-
-Total subarrays =
-
-[
-n + (n-1) + (n-2) + ... + 1
-]
-
-This is the **sum of the first n natural numbers**.
-
-Which equals:
-
-[
-\frac{n(n+1)}{2}
-]
-
----
-
-### 4. Why they wrote the summation
-
-They wrote:
-
-[
-\sum_{k=1}^{n} k
-]
-
-This means:
-
-```
-1 + 2 + 3 + ... + n
-```
-
-Which equals
-
-[
-\frac{n(n+1)}{2}
-]
-
----
-
-### 5. Example
-
-Array size **n = 4**
-
-```
-[1,2,3,4]
+[1, 2, 3]
 ```
 
 Subarrays:
 
-Length 1 → 4
-Length 2 → 3
-Length 3 → 2
-Length 4 → 1
-
-Total
-
 ```
-4 + 3 + 2 + 1 = 10
+[1]
+[2]
+[3]
+[1,2]
+[2,3]
+[1,2,3]
 ```
 
-Using formula
-
-[
-\frac{4(4+1)}{2} = 10
-]
-
----
-
-### 6. Important for Algorithms
-
-This is why many **subarray brute force algorithms are O(n²)**.
-
-Because the number of subarrays itself is:
-
-[
-O(n^2)
-]
-
----
-
-✅ **Simple intuition**
-
-Every subarray is defined by:
+Total:
 
 ```
-start index
-end index
+3 * (3 + 1) / 2 = 6
 ```
-
-Number of ways to choose `(start, end)` = **n(n+1)/2**
