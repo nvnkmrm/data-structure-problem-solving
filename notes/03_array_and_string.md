@@ -5,7 +5,7 @@
   - [Why Array and String are Ordered Group of Elements](#why-array-and-string-are-ordered-group-of-elements)
   - [Appending to the end of a list is amortized O(1)](#appending-to-the-end-of-a-list-is-amortized-o1)
   - [Why Sliding Window is O(n)](#why-sliding-window-is-on)
-  - [Numbers of sub arrays in an array](#numbers-of-sub-arrays-in-an-array)
+  - [Total Number of Subarrays in an Array](#total-number-of-subarrays-in-an-array)
 
 ---
 
@@ -335,7 +335,7 @@ n * (n + 1) / 2
 
 ---
 
-## Explanation
+### Explanation
 
 A subarray is a **contiguous part of an array**.
 
@@ -363,7 +363,7 @@ n * (n + 1) / 2
 
 ---
 
-## Example
+### Example
 
 Array:
 
