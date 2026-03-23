@@ -14,6 +14,9 @@
 # Output: ["h", "a", "n", "n", "a", "H"]
 
 
+import pytest
+
+
 def reverse(s: list[str]) -> None:
 
     left = 0
@@ -29,6 +32,17 @@ def reverse(s: list[str]) -> None:
         right -= 1
 
     print("".join(s))
+
+
+@pytest.mark.parametrize("s, expected", [
+    (list("hello"), list("olleh")),
+    (list("Hannah"), list("hannaH")),
+    (["a"], ["a"]),
+    ([], []),
+])
+def test_reverse(s, expected):
+    reverse(s)
+    assert s == expected
 
 
 if __name__ == "__main__":

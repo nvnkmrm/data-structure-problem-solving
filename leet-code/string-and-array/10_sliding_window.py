@@ -30,6 +30,21 @@ def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -
 
     return answer
 
+import pytest
+
+
+@pytest.mark.parametrize("nums, k, expected", [
+    ([1, 1, 1, 3], 3, 3),
+    ([3, 2, 1, 3, 1, 1], 5, 3),
+    ([1, 1, 1, 1, 4], 4, 4),
+    ([1, 2, 3], 6, 3),
+    ([5, 5, 5], 3, 0),
+    ([5, 1, 1, 1], 3, 3),
+])
+def test_longest_subarray_with_sum_less_than_or_equal_to_k(nums, k, expected):
+    assert longest_subarray_with_sum_less_than_or_equal_to_k(nums, k) == expected
+
+
 if __name__ == '__main__':
     print(longest_subarray_with_sum_less_than_or_equal_to_k([1,1,1,3],3))
     print(longest_subarray_with_sum_less_than_or_equal_to_k([3, 2, 1, 3, 1, 1],5))

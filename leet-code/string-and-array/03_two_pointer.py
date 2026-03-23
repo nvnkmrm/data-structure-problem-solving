@@ -17,6 +17,9 @@
 #             2. right--
 #             3. Both left++ and right--
 
+import pytest
+
+
 def palindrome(s : str) -> bool:
     i = 0
     j = len(s)-1
@@ -28,6 +31,18 @@ def palindrome(s : str) -> bool:
         j -= 1
 
     return True
+
+
+@pytest.mark.parametrize("s, expected", [
+    ("abc", False),
+    ("aba", True),
+    ("racecar", True),
+    ("abcdcba", True),
+    ("a", True),
+    ("", True),
+])
+def test_palindrome(s, expected):
+    assert palindrome(s) == expected
 
 
 if __name__ == "__main__":

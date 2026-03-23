@@ -20,5 +20,18 @@ def sum_to_target(nums: list[int], target: int) -> tuple[int, int] | None:
 
     return None
 
+import pytest
+
+@pytest.mark.parametrize("nums, target, expected", [
+    ([1, 2, 4, 6, 8, 9, 14, 15], 13, (4, 9)),
+    ([1, 2, 4, 6, 8, 9, 14, 15], 23, (8, 15)),
+    ([1, 2, 4, 6, 8, 9, 14, 15], 3, (1, 2)),
+    ([1, 2, 4, 6, 8, 9, 14, 15], 100, None),
+    ([1, 3, 5, 7], 8, (1, 7)),
+])
+def test_sum_to_target(nums, target, expected):
+    assert sum_to_target(nums, target) == expected
+
+
 if __name__ == "__main__":
     print(sum_to_target([1, 2, 4, 6, 8, 9, 14, 15], 23))

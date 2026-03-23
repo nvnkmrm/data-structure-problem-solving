@@ -13,6 +13,9 @@
 # Input: s = "axc", t = "ahbgdc"
 # Output: false
 
+import pytest
+
+
 def is_subsequence(str1, str2):
     i = j = 0
 
@@ -22,6 +25,18 @@ def is_subsequence(str1, str2):
         j += 1
 
     return i == len(str1)
+
+
+@pytest.mark.parametrize("str1, str2, expected", [
+    ("abc", "ahbgdc", True),
+    ("axc", "ahbgdc", False),
+    ("abcc", "abczxc", True),
+    ("", "abc", True),
+    ("abc", "", False),
+])
+def test_is_subsequence(str1, str2, expected):
+    assert is_subsequence(str1, str2) == expected
+
 
 if __name__ == "__main__":
     print(is_subsequence("abcc", "abczxc"))

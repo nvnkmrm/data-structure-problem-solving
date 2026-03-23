@@ -27,11 +27,11 @@ def squares_of_sorted_array(nums: list[int]) -> list[int]:
     ans = [0] * len(nums)
     pos = right
 
-    while left < right:
+    while left <= right:
 
         if abs(nums[left]) < abs(nums[right]):
             ans[pos] = nums[right] * nums[right]
-            right -=1
+            right -= 1
         else:
             ans[pos] = nums[left] * nums[left]
             left += 1
@@ -39,6 +39,20 @@ def squares_of_sorted_array(nums: list[int]) -> list[int]:
         pos -= 1
 
     return ans
+
+
+import pytest
+
+
+@pytest.mark.parametrize("nums, expected", [
+    ([-4, -1, 0, 3, 10], [0, 1, 9, 16, 100]),
+    ([-7, -3, 2, 3, 11], [4, 9, 9, 49, 121]),
+    ([0, 1, 2], [0, 1, 4]),
+    ([-3, -2, -1], [1, 4, 9]),
+    ([5], [25]),
+])
+def test_squares_of_sorted_array(nums, expected):
+    assert squares_of_sorted_array(nums) == expected
 
 
 if __name__ == "__main__":
