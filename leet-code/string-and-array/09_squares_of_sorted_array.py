@@ -1,4 +1,3 @@
-
 # Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
 #
 # Example 1:
@@ -25,21 +24,22 @@
 def squares_of_sorted_array(nums: list[int]) -> list[int]:
     left = 0
     right = len(nums) - 1
+    ans = [0] * len(nums)
     pos = right
-    result = [0] * len(nums)
 
-    while left <= right:
+    while left < right:
 
         if abs(nums[left]) < abs(nums[right]):
-            result[pos] = nums[right] * nums[right]
-            right -= 1
+            ans[pos] = nums[right] * nums[right]
+            right -=1
         else:
-            result[pos] = nums[left] * nums[left]
+            ans[pos] = nums[left] * nums[left]
             left += 1
+
         pos -= 1
 
-    return result
+    return ans
+
 
 if __name__ == "__main__":
-    print(squares_of_sorted_array([-2,-1,1,2]))
-
+    print(squares_of_sorted_array([-7,-3,2,3,11]))
