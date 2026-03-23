@@ -11,6 +11,7 @@
 #
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
+from typing import Any
 
 
 # 1. Create an empty map.
@@ -23,14 +24,16 @@
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 
-def sum_to_target(nums: list[int], target: int) -> tuple[int, int] | None:
+# Retried - 1
+def sum_to_target(nums: list[int], target: int) -> list[int] | None:
     store = {}
 
     for i in range(len(nums)):
-        complement = target - nums[i]
 
-        if complement in store:
-            return store[complement], i
+        balance = target - nums[i]
+
+        if balance in store:
+            return [store[balance], i]
         else:
             store[nums[i]] = i
 
