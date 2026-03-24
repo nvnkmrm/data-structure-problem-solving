@@ -15,22 +15,26 @@
 #
 #         Do some logic to update the answer
 
+import pytest
+
+# Retried - 1
 def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -> int:
     left = 0
-    answer = 0
-    current_sum = 0
+    ans = 0
+    curr = 0
     for right in range(len(nums)):
-        current_sum += nums[right]
+        curr += nums[right]
 
-        while current_sum > k:
-            current_sum -= nums[left]
-            left += 1
+        while curr > k:
+            curr -= nums[left]
+            left+=1
 
-        answer = max(answer, right - left + 1)
+        ans = max(ans, right - left + 1)
 
-    return answer
+    return ans
 
-import pytest
+
+        
 
 
 @pytest.mark.parametrize("nums, k, expected", [
@@ -43,9 +47,3 @@ import pytest
 ])
 def test_longest_subarray_with_sum_less_than_or_equal_to_k(nums, k, expected):
     assert longest_subarray_with_sum_less_than_or_equal_to_k(nums, k) == expected
-
-
-if __name__ == '__main__':
-    print(longest_subarray_with_sum_less_than_or_equal_to_k([1,1,1,3],3))
-    print(longest_subarray_with_sum_less_than_or_equal_to_k([3, 2, 1, 3, 1, 1],5))
-    print(longest_subarray_with_sum_less_than_or_equal_to_k([1,1,1,1,4],4))
