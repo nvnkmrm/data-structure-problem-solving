@@ -17,24 +17,24 @@
 
 import pytest
 
-# Retried - 1
+
+# Retried - 2
 def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -> int:
     left = 0
-    ans = 0
     curr = 0
+    ans = 0
+
     for right in range(len(nums)):
+
         curr += nums[right]
 
         while curr > k:
             curr -= nums[left]
-            left+=1
+            left += 1
 
         ans = max(ans, right - left + 1)
 
     return ans
-
-
-        
 
 
 @pytest.mark.parametrize("nums, k, expected", [
