@@ -20,6 +20,7 @@
 #
 # Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
 
+# Retried - 1
 
 def squares_of_sorted_array(nums: list[int]) -> list[int]:
     left = 0
@@ -28,14 +29,12 @@ def squares_of_sorted_array(nums: list[int]) -> list[int]:
     pos = right
 
     while left <= right:
-
-        if abs(nums[left]) < abs(nums[right]):
-            ans[pos] = nums[right] * nums[right]
-            right -= 1
-        else:
+        if abs(nums[left]) > abs(nums[right]):
             ans[pos] = nums[left] * nums[left]
             left += 1
-
+        else:
+            ans[pos] = nums[right] * nums[right]
+            right -= 1
         pos -= 1
 
     return ans
