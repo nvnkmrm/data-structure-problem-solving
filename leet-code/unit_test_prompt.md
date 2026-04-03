@@ -17,25 +17,17 @@ By following similar pattern writer a unit test for below program with different
 # Program
 
 ```
-# Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
-
-# Example 1:
+# Example 1: Given an integer array nums, an array queries where queries[i] = [x, y] and
+# an integer limit, return a boolean array that represents the answer to each query.
+# A query is true if the sum of the subarray from x to y is less than limit, or false otherwise.
 #
-# Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
-# Output: 6
-# Explanation: [1,1,1,0,0,1,1,1,1,1,1]
-# Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
-# Example 2:
-#
-# Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
-# Output: 10
-# Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
-# Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+# For example, given nums = [1, 6, 3, 2, 7, 2], queries = [[0, 3], [2, 5], [2, 4]], and limit = 13,
+# the answer is [true, false, true]. For each query, the subarray sums are [12, 14, 12].
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def longest_ones(nums: list[int], k: int) -> int:
+def subarray_sum_query(nums: list[int], limit: int, query: list[list[int]]) -> list[bool]:
 ```
