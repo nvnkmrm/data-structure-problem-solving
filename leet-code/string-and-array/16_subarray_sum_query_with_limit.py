@@ -6,29 +6,21 @@
 # the answer is [true, false, true]. For each query, the subarray sums are [12, 14, 12].
 
 
-def subarray_sum_query(nums: list[int], limit: int, query: list[list[int]]) -> list[bool]:
-    prefix_sum = [0] * len(nums)
-    prefix_sum[0] = nums[0]
-    result = [False] * len(query)
-    pos = 0
+def subarray_sum_query(nums: list[int], limit: int, queries: list[list[int]]) -> list[bool]:
+    prefix_sum = [nums[0]]
 
     for i in range(1, len(nums)):
-        prefix_sum[i] = nums[i] + prefix_sum[i - 1]
+        prefix_sum.append(nums[i] + prefix_sum[i-1])
 
-    for q in query:
-        i = q[0]
-        j = q[1]
+    ans=[]
 
-        sub_array_sum = prefix_sum[j] - prefix_sum[i] + nums[i]
+    for x, y in queries:
 
-        if sub_array_sum < limit:
-            result[pos] = True
-        else:
-            result[pos] = False
+        sum_of_sub_array = prefix_sum[y] - prefix_sum[x] + nums[x]
 
-        pos += 1
+        ans.append(sum_of_sub_array < limit)
 
-    return result
+    return ans
 
 import pytest
 
