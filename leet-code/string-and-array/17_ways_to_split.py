@@ -12,18 +12,17 @@
 # Thus, the number of valid splits in nums is 2.
 
 def ways_to_split(nums: list[int]) -> int:
-    psum = [nums[0]]
+    prefix = [nums[0]]
     ans = 0
 
     for i in range(1, len(nums)):
-        psum.append(psum[i - 1] + nums[i])
-
-    last_psum = psum[len(psum) - 1]
+        prefix.append(prefix[i - 1] + nums[i])
 
     for i in range(0, len(nums) - 1):
-        second_array_sum = last_psum - psum[i + 1] + nums[i + 1]
+        left_section = prefix[i]
+        right_section = prefix[-1] - prefix[i]
 
-        if psum[i] >= second_array_sum:
+        if left_section >= right_section:
             ans += 1
 
     return ans
