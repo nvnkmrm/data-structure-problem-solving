@@ -10,24 +10,32 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
     assert max_consecutive_ones_with_one_flip(nums) == expected
 ```
 
-# Task
+# Tasks
 
-By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
+1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
+2. Double check all the test cases are correct as per the program sure.
 
 # Program
 
 ```
-# Example 1: Given an integer array nums, an array queries where queries[i] = [x, y] and
-# an integer limit, return a boolean array that represents the answer to each query.
-# A query is true if the sum of the subarray from x to y is less than limit, or false otherwise.
-#
-# For example, given nums = [1, 6, 3, 2, 7, 2], queries = [[0, 3], [2, 5], [2, 4]], and limit = 13,
-# the answer is [true, false, true]. For each query, the subarray sums are [12, 14, 12].
+# Given an integer array nums, find the number of ways to split the array into two parts
+# so that the first section has a sum greater than or equal to the sum of the second section.
+# The second section should have at least one number.
+
+# Input: nums = [10,4,-8,7]
+# Output: 2
+# Explanation:
+# There are three ways of splitting nums into two non-empty parts:
+# - Split nums at index 0. Then, the first part is [10], and its sum is 10. The second part is [4,-8,7], and its sum is 3. Since 10 >= 3, i = 0 is a valid split.
+# - Split nums at index 1. Then, the first part is [10,4], and its sum is 14. The second part is [-8,7], and its sum is -1. Since 14 >= -1, i = 1 is a valid split.
+# - Split nums at index 2. Then, the first part is [10,4,-8], and its sum is 6. The second part is [7], and its sum is 7. Since 6 < 7, i = 2 is not a valid split.
+# Thus, the number of valid splits in nums is 2.
+
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def subarray_sum_query(nums: list[int], limit: int, query: list[list[int]]) -> list[bool]:
+def ways_to_split(self, nums: list[int]) -> int:
 ```
