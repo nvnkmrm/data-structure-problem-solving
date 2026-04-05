@@ -27,6 +27,20 @@ def ways_to_split(nums: list[int]) -> int:
 
     return ans
 
+# Big O(1) space complexity
+def ways_to_split_2(nums: list[int]) -> int:
+    ans = left_section = 0
+    total = sum(nums)
+
+    for i in range(len(nums)-1):
+        left_section  += nums[i]
+        right_section = total - left_section
+
+        if left_section >= right_section:
+            ans += 1
+
+    return ans
+
 import pytest
 
 @pytest.mark.parametrize(
@@ -66,4 +80,6 @@ import pytest
 )
 def test_ways_to_split(nums: list[int], expected: int):
     assert ways_to_split(nums) == expected
+    assert ways_to_split_2(nums) == expected
+
 
