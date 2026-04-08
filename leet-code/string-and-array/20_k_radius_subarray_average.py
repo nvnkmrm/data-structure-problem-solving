@@ -1,23 +1,3 @@
-# Persona
-
-You are expert in writing unit test in python. Below is the format.
-
-```
-import pytest
-
-@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] ) 
-def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):     
-    assert max_consecutive_ones_with_one_flip(nums) == expected
-```
-
-# Tasks
-
-1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
-2. Double check all the test cases are correct as per the program sure.
-
-# Program
-
-```
 # You are given a 0-indexed array nums of n integers, and an integer k.
 #
 # The k-radius average for a subarray of nums centered at some index i with the radius k is the average of all elements
@@ -53,11 +33,66 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Output: [-1]
 # Explanation:
 # - avg[0] is -1 because there are less than k elements before and after index 0.
-```
-# Method Schema
 
-Below is method schema
 
-```
-def k_radius_subarray_average(self, nums: list[int], k: int) -> list[int]:
-```
+import math
+
+def k_radius_subarray_average(nums: list[int], k: int) -> list[int]:
+
+    prefix = [nums[0]]
+    ans = []
+    last_index = len(nums) - 1
+
+    for i in range(1, len(nums)):
+        prefix.append(nums[i] + prefix[ i -1])
+
+    for i in range(len(nums)):
+
+        right = i + k
+        left = i - k
+
+        if left < 0 or right > last_index:
+            ans.append(-1)
+            continue
+
+        average = math.floor((prefix[right] - prefix[left] + nums[left]) / (( k *2) + 1))
+        ans.append(average)
+
+    return ans
+
+import pytest
+
+@pytest.mark.parametrize(
+    'nums, k, expected',
+    [
+        # Given examples
+        ([7,4,3,9,1,8,5,2,6], 3, [-1,-1,-1,5,4,4,-1,-1,-1]),
+        ([100000], 0, [100000]),
+        ([8], 100000, [-1]),
+
+        # Edge cases
+        ([1,2,3,4,5], 1, [-1,2,3,4,-1]),  # simple radius 1
+        ([1,2,3,4,5], 2, [-1,-1,3,-1,-1]),  # only one valid center
+        ([1,2,3,4,5], 3, [-1,-1,-1,-1,-1]),  # no valid centers
+
+        # All same values
+        ([5,5,5,5,5], 1, [-1,5,5,5,-1]),
+
+        # Larger window
+        ([10,20,30,40,50,60,70], 2, [-1,-1,30,40,50,-1,-1]),
+
+        # k = 0 (should return same array)
+        ([1,2,3], 0, [1,2,3]),
+
+        # Negative numbers
+        ([-3,-2,-1,0,1,2,3], 1, [-1,-2,-1,0,1,2,-1]),
+
+        # Mixed values
+        ([1,3,2,6,-1,4,1,8,2], 2, [-1,-1,2,2,2,3,2,-1,-1]),
+
+        # Minimum valid window
+        ([2,4,6], 1, [-1,4,-1]),
+    ]
+)
+def test_k_radius_subarray_average(nums: list[int], k: int, expected: list[int]):
+    assert k_radius_subarray_average(nums, k) == expected
