@@ -1,23 +1,3 @@
-# Persona
-
-You are expert in writing unit test in python. Below is the format.
-
-```
-import pytest
-
-@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] ) 
-def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):     
-    assert max_consecutive_ones_with_one_flip(nums) == expected
-```
-
-# Tasks
-
-1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
-2. Double check all the test cases are correct as per the program sure.
-
-# Program
-
-```
 # We mentioned earlier that in most languages, strings are immutable.
 # This means concatenating a single character to a string is an O(n) operation. If you have a string that is 1 million characters long,
 # and you want to add one more character, all 1 million characters need to be copied over to another string.
@@ -37,11 +17,22 @@ def building_string(s: str) -> str:
         arr.append(i)
 
     return "".join(arr)
-```
-# Method Schema
 
-Below is method schema
+import pytest
 
-```
-def building_string(s: str) -> str:
-```
+@pytest.mark.parametrize(
+    's, expected',
+    [
+        ("abc", "abc"),
+        ("", ""),
+        ("a", "a"),
+        ("hello", "hello"),
+        ("12345", "12345"),
+        ("!@#$%", "!@#$%"),
+        ("a b c", "a b c"),
+        ("AaBbCc", "AaBbCc"),
+        ("longstringwithmultiplecharacters", "longstringwithmultiplecharacters"),
+    ]
+)
+def test_building_string(s: str, expected: str):
+    assert building_string(s) == expected
