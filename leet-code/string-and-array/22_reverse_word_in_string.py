@@ -48,5 +48,5 @@ import pytest
     ]
 )
 def test_reverse_words(s: str, expected: str):
-    assert reverse_words(s) == expected
+    assert reverse_words_in_string(s) == expected
 

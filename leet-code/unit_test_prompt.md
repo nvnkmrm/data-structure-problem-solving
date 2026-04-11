@@ -18,21 +18,29 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given a string s, reverse the order of characters in each word within a sentence
-# while still preserving whitespace and initial word order.
+# Given a string s, reverse the string according to the following rules:
+#
+# All the characters that are not English letters remain in the same position.
+# All the English letters (lowercase or uppercase) should be reversed.
+# Return s after reversing it.
 #
 # Example 1:
-# Input: s = "Let's take LeetCode contest"
-# Output: "s'teL ekat edoCteeL tsetnoc"
-
+#
+# Input: s = "ab-cd"
+# Output: "dc-ba"
 # Example 2:
-# Input: s = "Mr Ding"
-# Output: "rM gniD"
+#
+# Input: s = "a-bC-dEf-ghIj"
+# Output: "j-Ih-gfE-dCba"
+# Example 3:
+#
+# Input: s = "Test1ng-Leet=code-Q!"
+# Output: "Qedo1ct-eeLg=ntse-T!"
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def reverse_words(s: str) -> str:
+def reverse_only_letters(s: str) -> str:
 ```
