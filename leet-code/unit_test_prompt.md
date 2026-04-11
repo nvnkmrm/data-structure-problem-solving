@@ -18,30 +18,21 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# We mentioned earlier that in most languages, strings are immutable.
-# This means concatenating a single character to a string is an O(n) operation. If you have a string that is 1 million characters long,
-# and you want to add one more character, all 1 million characters need to be copied over to another string.
+# Given a string s, reverse the order of characters in each word within a sentence
+# while still preserving whitespace and initial word order.
 #
-# Many problems will ask you to return a string, and usually, this string will be built during the algorithm.
-# Let's say the final string is of length n and we build it one character at a time with concatenation.
-# What would the time complexity be? The operations needed at each step would be 1 + 2 + 3 + ... + n.
-# This is the partial sum of this series, which leads to O(n^2) operation.)
-#
-# Simple concatenation will result in an big O of n^2 operation time complexity if you are using a language where strings are immutable.
+# Example 1:
+# Input: s = "Let's take LeetCode contest"
+# Output: "s'teL ekat edoCteeL tsetnoc"
 
-
-def building_string(s: str) -> str:
-    arr = []
-
-    for i in s:
-        arr.append(i)
-
-    return "".join(arr)
+# Example 2:
+# Input: s = "Mr Ding"
+# Output: "rM gniD"
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def building_string(s: str) -> str:
+def reverse_words(s: str) -> str:
 ```
