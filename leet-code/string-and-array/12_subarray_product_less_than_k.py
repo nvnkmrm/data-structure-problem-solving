@@ -5,15 +5,15 @@
 
 # [10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6]
 
-# retried - 1
+# retried - 2
 
 def subarray_product_less_than_k(nums: list[int], k) -> int:
-    if k <=0:
+    if k <= 1:
         return 0
 
     left = 0
-    ans = 0
     curr = 1
+    ans = 0
 
     for right in range(len(nums)):
 
