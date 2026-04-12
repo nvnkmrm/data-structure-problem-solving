@@ -14,33 +14,38 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 
 1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
 2. Double check all the test cases are correct as per the program sure.
+3. Consider the 'Constraints' in program descript while generating test data.
 
 # Program
 
 ```
-# Given a string s, reverse the string according to the following rules:
+# Given two integer arrays nums1 and nums2, sorted in non-decreasing order, return the minimum integer
+# common to both arrays. If there is no common integer amongst nums1 and nums2, return -1.
 #
-# All the characters that are not English letters remain in the same position.
-# All the English letters (lowercase or uppercase) should be reversed.
-# Return s after reversing it.
+# Note that an integer is said to be common to nums1 and nums2 if both arrays have at least one
+# occurrence of that integer.
 #
 # Example 1:
 #
-# Input: s = "ab-cd"
-# Output: "dc-ba"
+# Input: nums1 = [1,2,3], nums2 = [2,4]
+# Output: 2
+# Explanation: The smallest element common to both arrays is 2, so we return 2.
 # Example 2:
 #
-# Input: s = "a-bC-dEf-ghIj"
-# Output: "j-Ih-gfE-dCba"
-# Example 3:
+# Input: nums1 = [1,2,3,6], nums2 = [2,3,4,5]
+# Output: 2
+# Explanation: There are two common elements in the array 2 and 3 out of which 2 is the smallest, so 2 is returned.
 #
-# Input: s = "Test1ng-Leet=code-Q!"
-# Output: "Qedo1ct-eeLg=ntse-T!"
+# Constraints:
+#
+# 1 <= nums1.length, nums2.length <= 105
+# 1 <= nums1[i], nums2[j] <= 109
+# Both nums1 and nums2 are sorted in non-decreasing order.
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def reverse_only_letters(s: str) -> str:
+def get_common(self, nums1: list[int], nums2: list[int]) -> int:
 ```
