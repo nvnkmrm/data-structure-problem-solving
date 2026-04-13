@@ -19,9 +19,7 @@ def move_zeroes(nums: list[int]) -> None:
     """
     Do not return anything, modify nums in-place instead.
     """
-
     zero_index = []
-
     j = 0
 
     for i in range(len(nums)):
