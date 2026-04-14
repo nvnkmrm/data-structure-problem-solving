@@ -19,36 +19,41 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
-#
-# Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
-#
-# Example 1:
-#
-# Input: s = "abciiidef", k = 3
-# Output: 3
-# Explanation: The substring "iii" contains 3 vowel letters.
-# Example 2:
-#
-# Input: s = "aeiou", k = 2
-# Output: 2
-# Explanation: Any substring of length 2 contains 2 vowels.
-# Example 3:
-#
-# Input: s = "leetcode", k = 3
-# Output: 2
-# Explanation: "lee", "eet" and "ode" contain 2 vowels.
-#
-# Constraints:
-#
-# 1 <= s.length <= 10**5
-# s consists of lowercase English letters.
-# 1 <= k <= s.length
+You are given two strings s and t of the same length and an integer maxCost.
+
+You want to change s to t. Changing the ith character of s to ith character of t costs |s[i] - t[i]| (i.e., the absolute difference between the ASCII values of the characters).
+
+Return the maximum length of a substring of s that can be changed to be the same as the corresponding substring of t with a cost less than or equal to maxCost. If there is no substring from s that can be changed to its corresponding substring from t, return 0.
+
+Example 1:
+
+Input: s = "abcd", t = "bcdf", maxCost = 3
+Output: 3
+Explanation: "abc" of s can change to "bcd".
+That costs 3, so the maximum length is 3.
+Example 2:
+
+Input: s = "abcd", t = "cdef", maxCost = 3
+Output: 1
+Explanation: Each character in s costs 2 to change to character in t,  so the maximum length is 1.
+Example 3:
+
+Input: s = "abcd", t = "acde", maxCost = 0
+Output: 1
+Explanation: You cannot make any change, so the maximum length is 1.
+ 
+
+Constraints:
+
+1 <= s.length <= 105
+t.length == s.length
+0 <= maxCost <= 106
+s and t consist of only lowercase English letters.
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def max_vowels(s: str, k: int) -> int:
+def equal_substring(s: str, t: str, max_cost: int) -> int:
 ```
