@@ -19,35 +19,36 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given an array of positive integers nums and a positive integer target,
-# return the minimal length of a subarray whose sum is greater than or equal to target.
-# If there is no such subarray, return 0 instead.
+# Given a string s and an integer k, return the maximum number of vowel letters in any substring of s with length k.
+#
+# Vowel letters in English are 'a', 'e', 'i', 'o', and 'u'.
 #
 # Example 1:
 #
-# Input: target = 7, nums = [2,3,1,2,4,3]
-# Output: 2
-# Explanation: The subarray [4,3] has the minimal length under the problem constraint.
+# Input: s = "abciiidef", k = 3
+# Output: 3
+# Explanation: The substring "iii" contains 3 vowel letters.
 # Example 2:
 #
-# Input: target = 4, nums = [1,4,4]
-# Output: 1
+# Input: s = "aeiou", k = 2
+# Output: 2
+# Explanation: Any substring of length 2 contains 2 vowels.
 # Example 3:
 #
-# Input: target = 11, nums = [1,1,1,1,1,1,1,1]
-# Output: 0
-#
+# Input: s = "leetcode", k = 3
+# Output: 2
+# Explanation: "lee", "eet" and "ode" contain 2 vowels.
 #
 # Constraints:
 #
-# 1 <= target <= 109
-# 1 <= nums.length <= 105
-# 1 <= nums[i] <= 104
+# 1 <= s.length <= 10**5
+# s consists of lowercase English letters.
+# 1 <= k <= s.length
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def min_sub_array_len(target: int, nums: list[int]) -> int:
+def max_vowels(s: str, k: int) -> int:
 ```
