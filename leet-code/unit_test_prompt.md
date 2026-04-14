@@ -19,43 +19,35 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given a 0-indexed string word and a character ch, reverse the segment of word that
-# starts at index 0 and ends at the index of the first occurrence of ch (inclusive).
-# If the character ch does not exist in word, do nothing.
-#
-# For example, if word = "abcdefd" and ch = "d", then you should reverse the segment
-# that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
-# Return the resulting string.
+# Given an array of positive integers nums and a positive integer target,
+# return the minimal length of a subarray whose sum is greater than or equal to target.
+# If there is no such subarray, return 0 instead.
 #
 # Example 1:
 #
-# Input: word = "abcdefd", ch = "d"
-# Output: "dcbaefd"
-# Explanation: The first occurrence of "d" is at index 3.
-# Reverse the part of word from 0 to 3 (inclusive), the resulting string is "dcbaefd".
-#
+# Input: target = 7, nums = [2,3,1,2,4,3]
+# Output: 2
+# Explanation: The subarray [4,3] has the minimal length under the problem constraint.
 # Example 2:
-# Input: word = "xyxzxe", ch = "z"
-# Output: "zxyxxe"
-# Explanation: The first and only occurrence of "z" is at index 3.
-# Reverse the part of word from 0 to 3 (inclusive), the resulting string is "zxyxxe".
 #
+# Input: target = 4, nums = [1,4,4]
+# Output: 1
 # Example 3:
-# Input: word = "abcd", ch = "z"
-# Output: "abcd"
-# Explanation: "z" does not exist in word.
-# You should not do any reverse operation, the resulting string is "abcd".
+#
+# Input: target = 11, nums = [1,1,1,1,1,1,1,1]
+# Output: 0
+#
 #
 # Constraints:
 #
-# 1 <= word.length <= 250
-# word consists of lowercase English letters.
-# ch is a lowercase English letter.
+# 1 <= target <= 109
+# 1 <= nums.length <= 105
+# 1 <= nums[i] <= 104
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def reverse_prefix(word: str, ch: str) -> str:
+def min_sub_array_len(target: int, nums: list[int]) -> int:
 ```
