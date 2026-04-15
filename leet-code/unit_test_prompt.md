@@ -19,41 +19,33 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-You are given two strings s and t of the same length and an integer maxCost.
-
-You want to change s to t. Changing the ith character of s to ith character of t costs |s[i] - t[i]| (i.e., the absolute difference between the ASCII values of the characters).
-
-Return the maximum length of a substring of s that can be changed to be the same as the corresponding substring of t with a cost less than or equal to maxCost. If there is no substring from s that can be changed to its corresponding substring from t, return 0.
-
-Example 1:
-
-Input: s = "abcd", t = "bcdf", maxCost = 3
-Output: 3
-Explanation: "abc" of s can change to "bcd".
-That costs 3, so the maximum length is 3.
-Example 2:
-
-Input: s = "abcd", t = "cdef", maxCost = 3
-Output: 1
-Explanation: Each character in s costs 2 to change to character in t,  so the maximum length is 1.
-Example 3:
-
-Input: s = "abcd", t = "acde", maxCost = 0
-Output: 1
-Explanation: You cannot make any change, so the maximum length is 1.
- 
-
-Constraints:
-
-1 <= s.length <= 105
-t.length == s.length
-0 <= maxCost <= 106
-s and t consist of only lowercase English letters.
+# There is a biker going on a road trip. The road trip consists of n + 1 points at different altitudes.
+# The biker starts his trip on point 0 with altitude equal 0.
+#
+# You are given an integer array gain of length n where gain[i] is the net gain in altitude
+# between points i and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
+#
+# Example 1:
+#
+# Input: gain = [-5,1,5,0,-7]
+# Output: 1
+# Explanation: The altitudes are [0,-5,-4,1,1,-6]. The highest is 1.
+# Example 2:
+#
+# Input: gain = [-4,-3,-2,-1,4,3,2]
+# Output: 0
+# Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.
+#
+# Constraints:
+#
+# n == gain.length
+# 1 <= n <= 100
+# -100 <= gain[i] <= 100
 ```
 # Method Schema
 
 Below is method schema
 
 ```
-def equal_substring(s: str, t: str, max_cost: int) -> int:
+def largest_altitude(gain: list[int]) -> int:
 ```
