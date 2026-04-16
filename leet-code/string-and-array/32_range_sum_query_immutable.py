@@ -1,24 +1,3 @@
-# Persona
-
-You are expert in writing unit test in python. Below is the format.
-
-```
-import pytest
-
-@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] ) 
-def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):     
-    assert max_consecutive_ones_with_one_flip(nums) == expected
-```
-
-# Tasks
-
-1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
-2. Double check all the test cases are correct as per the program sure.
-3. Consider the '# Constraints:' in program descript while generating test data.
-
-# Program
-
-```
 # Given an integer array nums, handle multiple queries of the following type:
 #
 # Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
@@ -49,12 +28,7 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # -105 <= nums[i] <= 105
 # 0 <= left <= right < nums.length
 # At most 104 calls will be made to sumRange.
-```
-# Method Schema
 
-Below is method schema
-
-```
 class NumArray:
 
     def __init__(self, nums: list[int]):
@@ -71,6 +45,33 @@ class NumArray:
 
     def sumRange(self, left: int, right: int) -> int:
         return self.prefix[right] - self.prefix[left] + self.nums[left]
-        
-def prefix_sum(self, nums: list[int]) -> list[int]:
-```
+
+
+import pytest
+
+
+@pytest.mark.parametrize(
+    'nums, left, right, expected',
+    [
+        ([-2, 0, 3, -5, 2, -1], 0, 2, 1),  # example case
+        ([-2, 0, 3, -5, 2, -1], 2, 5, -1),  # example case
+        ([-2, 0, 3, -5, 2, -1], 0, 5, -3),  # full range
+
+        ([1], 0, 0, 1),  # single element
+
+        ([5, -2, 7, 3], 1, 3, 8),  # subarray with negatives
+        ([5, -2, 7, 3], 0, 0, 5),  # first element only
+        ([5, -2, 7, 3], 3, 3, 3),  # last element only
+
+        ([0, 0, 0, 0], 0, 3, 0),  # all zeros
+
+        ([-1, -2, -3, -4], 0, 3, -10),  # all negatives
+        ([-1, -2, -3, -4], 1, 2, -5),  # subarray negatives
+
+        ([100000, -100000, 100000], 0, 2, 100000),  # boundary values
+        ([100000, -100000, 100000], 1, 1, -100000),  # single large negative
+    ]
+)
+def test_sum_range(nums: list[int], left: int, right: int, expected: int):
+    num_array = NumArray(nums)
+    assert num_array.sumRange(left, right) == expected
