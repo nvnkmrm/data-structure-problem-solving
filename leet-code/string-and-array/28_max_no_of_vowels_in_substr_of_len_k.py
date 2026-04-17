@@ -24,21 +24,29 @@
 # s consists of lowercase English letters.
 # 1 <= k <= s.length
 
+# Redid - 1
+
 def max_vowels(s: str, k: int) -> int:
-    curr = 0
+    curr = left = 0
     vowels = ['a', 'e', 'i', 'o', 'u']
 
-    curr = sum(1 for i in range(k) if s[i] in vowels)
-    max_count = curr
-
-    for right in range(k, len(s)):
-        if s[right] in vowels:
+    for i in range(k):
+        if s[i] in vowels:
             curr += 1
 
-        if s[right - k] in vowels:
+    max_count = curr
+
+    for i in range(k, len(s)):
+
+        if s[i] in vowels:
+            curr += 1
+
+        if s[left] in vowels:
             curr -= 1
 
         max_count = max(max_count, curr)
+
+        left += 1
 
     return max_count
 
