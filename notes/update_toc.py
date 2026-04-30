@@ -10,7 +10,7 @@ Usage:
 
 import re
 
-README = "03_array_and_string.md"
+README = "04_hashing.md"
 TOC_START = "# Table of Contents"
 TOC_MARKER = "---"  # first horizontal rule after TOC marks end of TOC block
 
