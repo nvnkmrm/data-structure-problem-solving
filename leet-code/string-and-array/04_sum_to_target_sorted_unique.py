@@ -4,7 +4,7 @@
 #
 # For example, given nums = [1, 2, 4, 6, 8, 9, 14, 15] and target = 13, return true because 4 + 9 = 13.
 
-# Retried - 2
+# Retried - 1
 def sum_to_target(nums: list[int], target: int) -> tuple[int, int] | None:
     left = 0
     right = len(nums)-1
