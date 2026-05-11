@@ -8,9 +8,6 @@
 
 Hashing refers to the process of generating a small sized output (that can be used as index in a table) from an input of typically large and variable size. Hashing uses mathematical formulas known as hash functions to do the transformation. This technique determines an index or location for the storage of an item in a data structure called Hash Table.
 
-[Hashing](https://www.geeksforgeeks.org/dsa/introduction-to-hashing-2/)
-[Collision Resolution Techniques](https://www.geeksforgeeks.org/dsa/collision-resolution-techniques/)
-
 # Hash Table Data Structure Overview
 
 - It is one of the most widely used data structure after arrays.
@@ -20,3 +17,8 @@ Hashing refers to the process of generating a small sized output (that can be us
 - There are mainly two forms of hash typically implemented in programming languages.
 - Hash Set : Collection of unique keys (Implemented as Set in Python, Set in JavaScrtipt, unordered_set in C++ and HashSet in Java.
 - Hash Map : Collection of key value pairs with keys being unique (Implemented as dictionary in Python, Map in JavaScript, unordered_map in C++ and HashMap in Java)
+
+# References
+
+- [Hashing Introduction](https://www.geeksforgeeks.org/dsa/introduction-to-hashing-2/)
+- [Collision Resolution Techniques](https://www.geeksforgeeks.org/dsa/collision-resolution-techniques/)
