@@ -18,6 +18,8 @@ Hashing refers to the process of generating a small sized output (that can be us
 - Hash Set : Collection of unique keys (Implemented as Set in Python, Set in JavaScrtipt, unordered_set in C++ and HashSet in Java.
 - Hash Map : Collection of key value pairs with keys being unique (Implemented as dictionary in Python, Map in JavaScript, unordered_map in C++ and HashMap in Java)
 
+Hashing is technique used in data strucuture to identify the location for storing/retrieving the value in the array.
+
 # References
 
 - [Hashing Introduction](https://www.geeksforgeeks.org/dsa/introduction-to-hashing-2/)
