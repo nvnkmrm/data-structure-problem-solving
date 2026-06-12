@@ -5,8 +5,8 @@ You are expert in writing unit test in python. Below is the format.
 ```
 import pytest
 
-@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] ) 
-def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):     
+@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] )
+def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
     assert max_consecutive_ones_with_one_flip(nums) == expected
 ```
 
@@ -19,58 +19,43 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given an integer array nums, handle multiple queries of the following type:
-#
-# Calculate the sum of the elements of nums between indices left and right inclusive where left <= right.
-# Implement the NumArray class:
-#
-# NumArray(int[] nums) Initializes the object with the integer array nums.
-# int sumRange(int left, int right) Returns the sum of the elements of nums between indices left and right inclusive
-# (i.e. nums[left] + nums[left + 1] + ... + nums[right]).
-#
-#
-# Example 1:
-#
-# Input
-# ["NumArray", "sumRange", "sumRange", "sumRange"]
-# [[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
-# Output
-# [null, 1, -1, -3]
-#
-# Explanation
-# NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
-# numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
-# numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
-# numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
-#
-# Constraints:
-#
-# 1 <= nums.length <= 104
-# -105 <= nums[i] <= 105
-# 0 <= left <= right < nums.length
-# At most 104 calls will be made to sumRange.
+Given a string s consisting of lowercase English letters, return the first letter to appear twice.
+
+Note:
+
+A letter a appears twice before another letter b if the second occurrence of a is before the second occurrence of b.
+s will contain at least one letter that appears twice.
+
+
+Example 1:
+
+Input: s = "abccbaacz"
+Output: "c"
+Explanation:
+The letter 'a' appears on the indexes 0, 5 and 6.
+The letter 'b' appears on the indexes 1 and 4.
+The letter 'c' appears on the indexes 2, 3 and 7.
+The letter 'z' appears on the index 8.
+The letter 'c' is the first letter to appear twice, because out of all the letters the index of its second occurrence is the smallest.
+Example 2:
+
+Input: s = "abcdd"
+Output: "d"
+Explanation:
+The only letter that appears twice is 'd' so we return 'd'.
+
+
+Constraints:
+
+2 <= s.length <= 100
+s consists of lowercase English letters.
+s has at least one repeated letter.
 ```
+
 # Method Schema
 
 Below is method schema
 
 ```
-class NumArray:
-
-    def __init__(self, nums: list[int]):
-        self.nums = nums
-        self.prefix = self.prefix_sum(nums)
-
-    def prefix_sum(self, nums: list[int]) -> list[int]:
-        prefix = [nums[0]]
-
-        for i in range(1, len(nums)):
-            prefix.append(nums[i] + prefix[i - 1])
-
-        return prefix
-
-    def sumRange(self, left: int, right: int) -> int:
-        return self.prefix[right] - self.prefix[left] + self.nums[left]
-        
-def prefix_sum(self, nums: list[int]) -> list[int]:
+def repeatedCharacter(self, s: str) -> str:
 ```
