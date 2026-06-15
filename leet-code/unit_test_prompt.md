@@ -19,18 +19,10 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-We can solve this in a straightforward manner - just iterate through nums and check if x + 1 or x - 1 is in nums. By converting nums into a set beforehand, these checks will cost
+def checkIfPangram(sentence: str) -> bool:
+    pangram = set(sentence)
 
-def x_in_nums(nums: list[int]) -> list[int]:
-    ans = []
-    nums_set = set(nums)
-
-    for num in nums_set:
-
-        if (num+1 not in nums_set) and (num-1 not in nums_set):
-            ans.append(num)
-
-    return ans
+    return len(pangram) == 26
 
 ```
 
@@ -39,5 +31,5 @@ def x_in_nums(nums: list[int]) -> list[int]:
 Below is method schema
 
 ```
-def x_in_nums(nums: list[int]) -> list[int]:
+def checkIfPangram(sentence: str) -> bool:
 ```
