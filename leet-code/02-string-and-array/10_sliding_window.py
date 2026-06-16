@@ -43,3 +43,46 @@ def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -
 ])
 def test_longest_subarray_with_sum_less_than_or_equal_to_k(nums, k, expected):
     assert longest_subarray_with_sum_less_than_or_equal_to_k(nums, k) == expected
+    
+    
+#------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------
+
+def longest_substring_atmost_k_zeros(nums: str, k: int) -> int:
+    
+    left = 0
+    curr = 0
+    ans = 0
+    
+    for right in range(len(nums)):
+        if nums[right] == '0':
+            curr+=1
+            
+        while curr > k:
+            if nums[left] == '0':
+                curr -= 1
+            left += 1
+        
+        ans = max(ans, right - left + 1)
+    
+    return ans
+
+
+@pytest.mark.parametrize(
+    "nums, k, expected",
+    [
+        ("11001111", 1, 5),
+        ("11001111", 2, 8),
+        ("0000", 1, 1),
+        ("0000", 2, 2),
+        ("1111", 1, 4),
+        ("1010101", 2, 5),
+        ("1101001110", 2, 6),
+        ("0", 1, 1),
+        ("10", 0, 1),
+        ("10001", 1, 2),
+    ],
+)
+def test_longest_substring_atmost_k_zeros(nums: str, k: int, expected: int):
+    assert longest_substring_atmost_k_zeros(nums, k) == expected
