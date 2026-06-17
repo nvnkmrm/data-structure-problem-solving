@@ -4,15 +4,17 @@
 
 # For example, given s = "eceba" and k = 2, return 3. The longest substring with at most 2 distinct characters is "ece".
 
+from collections import defaultdict
+
 def find_longest_substring(s: str, k: int) -> int:
     
-    char_count = {}
+    char_count = defaultdict(int)
     left = 0
     ans = 0
     
     for right, char in enumerate(s):
         
-        char_count[char] = char_count.get(char,0) + 1
+        char_count[char] += 1
         
         while len(char_count) > k:
             left_char = s[left]
