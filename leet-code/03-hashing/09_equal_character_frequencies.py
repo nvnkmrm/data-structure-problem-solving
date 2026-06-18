@@ -1,29 +1,8 @@
-# Persona
-
-You are expert in writing unit test in python. Below is the format.
-
-```
-import pytest
-
-@pytest.mark.parametrize(     'nums, expected',     [         ('11001111', 5),         ('11001011', 4),         ('1101', 4),     ] )
-def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
-    assert max_consecutive_ones_with_one_flip(nums) == expected
-```
-
-# Tasks
-
-1. By following similar pattern writer a unit test for below program with different test cases. Utilise the method schema to write unit test.
-2. Double check all the test cases are correct as per the program sure.
-3. Consider the '# Constraints:' in program descript while generating test data.
-
-# Program
-
-```
 # Given a string s, return true if s is a good string, or false otherwise.
 
 # A string s is good if all the characters that appear in s have the same number of occurrences (i.e., the same frequency).
 
-
+ 
 
 # Example 1:
 
@@ -36,7 +15,7 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Output: false
 # Explanation: The characters that appear in s are 'a' and 'b'.
 # 'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.
-
+ 
 
 # Constraints:
 
@@ -53,12 +32,24 @@ def areOccurrencesEqual( s: str) -> bool:
 
     return len(set(char_map.values())) == 1
 
-```
 
-# Method Schema
+import pytest
 
-Below is method schema
 
-```
-def areOccurrencesEqual( s: str) -> bool:
-```
+@pytest.mark.parametrize(
+    "s, expected",
+    [
+        ("abacbc", True),      # a=2, b=2, c=2
+        ("aaabb", False),      # a=3, b=2
+        ("a", True),           # a=1
+        ("ab", True),          # a=1, b=1
+        ("aabbcc", True),      # a=2, b=2, c=2
+        ("aabbccc", False),    # a=2, b=2, c=3
+        ("abcabcabc", True),   # a=3, b=3, c=3
+        ("zzzz", True),        # z=4
+        ("xyyz", False),       # x=1, y=2, z=1
+        ("abababcc", False),   # a=3, b=3, c=2
+    ],
+)
+def test_are_occurrences_equal(s: str, expected: bool):
+    assert areOccurrencesEqual(s) == expected

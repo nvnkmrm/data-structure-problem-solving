@@ -26,7 +26,7 @@ def find_longest_substring(s: str, k: int) -> int:
             left += 1 
         
         ans = max(ans, right - left + 1)
-    
+        
     return ans
 
 
