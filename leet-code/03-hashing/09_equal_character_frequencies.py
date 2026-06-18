@@ -22,8 +22,7 @@
 # 1 <= s.length <= 1000
 # s consists of lowercase English letters.
 
-from collections import defaultdict
-from collections import Counter
+from collections import defaultdict, Counter
 
 def areOccurrencesEqual( s: str) -> bool:
     char_map = defaultdict(int)
