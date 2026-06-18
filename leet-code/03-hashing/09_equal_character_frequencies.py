@@ -23,6 +23,7 @@
 # s consists of lowercase English letters.
 
 from collections import defaultdict
+from collections import Counter
 
 def areOccurrencesEqual( s: str) -> bool:
     char_map = defaultdict(int)
@@ -32,6 +33,8 @@ def areOccurrencesEqual( s: str) -> bool:
 
     return len(set(char_map.values())) == 1
 
+def areOccurrencesEqual2( s: str) -> bool:
+    return len(set(Counter(s).values()))==1
 
 import pytest
 
@@ -53,3 +56,5 @@ import pytest
 )
 def test_are_occurrences_equal(s: str, expected: bool):
     assert areOccurrencesEqual(s) == expected
+    assert areOccurrencesEqual2(s) == expected
+
