@@ -19,40 +19,30 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
-# Given a string s, return true if s is a good string, or false otherwise.
 
-# A string s is good if all the characters that appear in s have the same number of occurrences (i.e., the same frequency).
+# Find the number of subarrays that have a sum exactly equal to k
 
-
-
-# Example 1:
-
-# Input: s = "abacbc"
-# Output: true
-# Explanation: The characters that appear in s are 'a', 'b', and 'c'. All characters occur 2 times in s.
-# Example 2:
-
-# Input: s = "aaabb"
-# Output: false
-# Explanation: The characters that appear in s are 'a' and 'b'.
-# 'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.
-
-
-# Constraints:
-
-# 1 <= s.length <= 1000
-# s consists of lowercase English letters.
+# Imagine we had nums = [0, 1, 2, 3, 4] and k = 5.
 
 from collections import defaultdict
 
-def areOccurrencesEqual( s: str) -> bool:
-    char_map = defaultdict(int)
+def no_of_subarrays(nums: list[int], k:int) -> int:
 
-    for char in s:
-        char_map[char] += 1
+    prefix_map = defaultdict(int)
 
-    return len(set(char_map.values())) == 1
+    prefix_map[0] = 1
 
+    curr_sum = 0
+    count = 0
+
+    for num in nums:
+        curr_sum += num
+
+        count += prefix_map[curr_sum - k]
+
+        prefix_map[curr_sum] += 1
+
+    return count
 ```
 
 # Method Schema
@@ -60,5 +50,5 @@ def areOccurrencesEqual( s: str) -> bool:
 Below is method schema
 
 ```
-def areOccurrencesEqual( s: str) -> bool:
+def no_of_subarrays(nums: list[int], k:int) -> int:
 ```
