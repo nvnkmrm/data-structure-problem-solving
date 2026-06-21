@@ -25,18 +25,20 @@ from typing import Any
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 
-# Retried - 2
+# Retried - 3
+
+from collections import defaultdict
+
 def sum_to_target(nums: list[int], target: int) -> list[int] | None:
-    dic = {}
-    
+    num_map = defaultdict(int)
+
     for i in range(len(nums)):
-        num = nums[i]
-        complement = target - num
+        complement = target - nums[i]
+
+        if complement in num_map:
+            return [num_map[complement], i]
         
-        if complement in dic:
-            return [dic[complement], i]
-        
-        dic[num] = i 
+        num_map[nums[i]] = i
     
     return None
 
