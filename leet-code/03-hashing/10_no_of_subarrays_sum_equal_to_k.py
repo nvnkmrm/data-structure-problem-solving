@@ -5,7 +5,7 @@
 
 from collections import defaultdict
 
-# redid - 2 - Medium
+# redid - 3 - Medium
 
 def no_of_subarrays(nums: list[int], k:int) -> int:
     
