@@ -5,24 +5,20 @@
 
 from collections import defaultdict
 
-# redid - 3 - Medium
+# redid - 4 - Medium
 
 def no_of_subarrays(nums: list[int], k:int) -> int:
     
-    prefix_map = defaultdict(int)
-    
-    prefix_map[0] = 1
-    
+    prefix = defaultdict(int)
+    prefix[0] = 1
     curr_sum = 0
     count = 0
     
     for num in nums:
         curr_sum += num
-        
-        count += prefix_map[curr_sum - k]
-        
-        prefix_map[curr_sum] += 1
-
+        count += prefix[curr_sum - k]
+        prefix[curr_sum] += 1
+    
     return count
         
             
