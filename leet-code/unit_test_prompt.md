@@ -19,30 +19,27 @@ def test_max_consecutive_ones_with_one_flip(nums: str, expected: int):
 # Program
 
 ```
+# Example 5: 1248. Count Number of Nice Subarrays
 
-# Find the number of subarrays that have a sum exactly equal to k
+# Given an array of positive integers nums and an integer k. Find the number of subarrays with exactly k odd numbers in them.
 
-# Imagine we had nums = [0, 1, 2, 3, 4] and k = 5.
+# For example, given nums = [1, 1, 2, 1, 1], k = 3, the answer is 2. The subarrays with 3 odd numbers in them are [1, 1, 2, 1, 1] and [1, 1, 2, 1, 1]
 
 from collections import defaultdict
 
-def no_of_subarrays(nums: list[int], k:int) -> int:
-
-    prefix_map = defaultdict(int)
-
-    prefix_map[0] = 1
-
-    curr_sum = 0
-    count = 0
+def count_no_of_sub_arrays(nums: list[int], k:int) -> int:
+    counts = defaultdict(int)
+    curr = ans  = 0
 
     for num in nums:
-        curr_sum += num
 
-        count += prefix_map[curr_sum - k]
+        curr += num%2
 
-        prefix_map[curr_sum] += 1
+        ans += counts[curr-k]
 
-    return count
+        counts[curr] += 1
+
+    return ans
 ```
 
 # Method Schema
@@ -50,5 +47,5 @@ def no_of_subarrays(nums: list[int], k:int) -> int:
 Below is method schema
 
 ```
-def no_of_subarrays(nums: list[int], k:int) -> int:
+def count_no_of_sub_arrays(nums: list[int], k:int) -> int:
 ```
