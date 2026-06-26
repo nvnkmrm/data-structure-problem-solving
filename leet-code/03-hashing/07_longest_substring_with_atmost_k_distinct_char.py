@@ -6,27 +6,24 @@
 
 from collections import defaultdict
 
+# redid - 1
 def find_longest_substring(s: str, k: int) -> int:
-    
     char_count = defaultdict(int)
-    left = 0
-    ans = 0
+    left = ans = 0
     
     for right, char in enumerate(s):
-        
         char_count[char] += 1
         
         while len(char_count) > k:
-            left_char = s[left]
-            char_count[left_char] -= 1
+            char_count[s[left]] -= 1
+             
+            if char_count[s[left]] == 0:
+                del char_count[s[left]]
             
-            if char_count[left_char] == 0:
-                del char_count[left_char]
-            
-            left += 1 
+            left += 1
         
         ans = max(ans, right - left + 1)
-        
+    
     return ans
 
 
