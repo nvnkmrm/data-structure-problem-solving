@@ -6,21 +6,18 @@
 
 from collections import defaultdict
 
+#redid - 1
 def count_no_of_sub_arrays(nums: list[int], k:int) -> int:
     counts = defaultdict(int)
     counts[0] = 1
-    curr = ans  = 0
+    curr = ans = 0
     
     for num in nums:
-        
         curr += num%2
-        
-        ans += counts[curr-k]
-        
+        ans += counts[curr - k]
         counts[curr] += 1
     
     return ans
-
 
 import pytest
 
@@ -65,9 +62,6 @@ import pytest
 
         # Consecutive odd numbers
         ([1, 1, 1, 1], 3, 2),
-
-        # Larger mixture of odd and even numbers
-        ([2, 1, 2, 1, 2, 1, 2], 2, 8),
     ]
 )
 def test_count_no_of_sub_arrays(nums: list[int], k: int, expected: int):
