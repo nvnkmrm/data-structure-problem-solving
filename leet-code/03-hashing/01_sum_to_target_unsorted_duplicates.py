@@ -25,23 +25,26 @@ from typing import Any
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 
-# Retried - 3
+# Retried - 4
 
 from collections import defaultdict
 
 def sum_to_target(nums: list[int], target: int) -> list[int] | None:
+    
     num_map = defaultdict(int)
-
+    
     for i in range(len(nums)):
-        complement = target - nums[i]
-
+        num = nums[i]
+        complement = target - num
+        
         if complement in num_map:
             return [num_map[complement], i]
-        
-        num_map[nums[i]] = i
-    
-    return None
 
+        num_map[num] = i
+            
+    return None        
+        
+        
 
 @pytest.mark.parametrize("nums, target, expected", [
     ([2, 7, 11, 15], 9, [0, 1]),

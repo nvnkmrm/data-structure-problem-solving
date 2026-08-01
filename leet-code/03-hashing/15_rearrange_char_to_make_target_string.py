@@ -34,6 +34,8 @@
 # 1 <= target.length <= 10
 # s and target consist of lowercase English letters.
 
+from collections import Counter
+
 def rearrange_characters(s: str, target: str) -> int:
     s_counter = Counter(s)
     target_counter = Counter(target)
