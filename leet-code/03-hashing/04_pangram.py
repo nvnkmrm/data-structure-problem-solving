@@ -1,11 +1,11 @@
 
+# Retry - 1
 
 def checkIfPangram(sentence: str) -> bool:
-    pangram = set(sentence)
+    letters = set(sentence)
     
-    return len(pangram) == 26
-
-
+    return len(letters) == 26
+    
 import pytest
 
 
