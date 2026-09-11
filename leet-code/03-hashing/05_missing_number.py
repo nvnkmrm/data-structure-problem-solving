@@ -28,17 +28,18 @@
 
 # Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 
+# Retried 1
 
 def sum_of_natural_number(n: int) -> int:
-        return int((n *(n+1))/2)
-    
+    return int(n*(n+1)/2)
+
 def missingNumber(nums: list[int]) -> int:
     
     sum_of_n = sum_of_natural_number(len(nums))
     
-    for num in nums:
+    for n in nums:
         
-        sum_of_n -= num
+        sum_of_n -= n
     
     return sum_of_n
 
