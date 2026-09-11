@@ -23,13 +23,11 @@
 def countElements(arr: list[int]) -> int:
     
     arr_set = set(arr)
-    
     counter = 0
     
     for x in arr:
         
         if x+1 in arr_set:
-            
             counter += 1
     
     return counter
