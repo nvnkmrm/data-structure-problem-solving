@@ -30,17 +30,17 @@
 # s consists of lowercase English letters.
 # s has at least one repeated letter.
 
+# Retried - 1
 
 def repeatedCharacter(s: str) -> str:
     letter = set()
-
+    
     for char in s:
-
+        
         if char in letter:
             return char
         
         letter.add(char)
-        
         
 import pytest
 
