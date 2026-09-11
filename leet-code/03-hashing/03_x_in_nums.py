@@ -2,14 +2,17 @@
 
 # If a valid number x appears multiple times, you only need to include it in the answer once.
 
+# Retry - 1
+
 def x_in_nums(nums: list[int]) -> list[int]:
-    ans = []
-    nums_set = set(nums)
     
-    for num in nums_set:
+    nums_set = set(nums)
+    ans = []
+    
+    for x in nums_set:
         
-        if (num+1 not in nums_set) and (num-1 not in nums_set):
-            ans.append(num)
+        if (x+1 not in nums_set) and (x-1 not in nums_set):
+            ans.append(x)
     
     return ans
 
