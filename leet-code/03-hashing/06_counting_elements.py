@@ -18,17 +18,21 @@
 # 1 <= arr.length <= 1000
 # 0 <= arr[i] <= 1000
 
+# retry - 1
+
 def countElements(arr: list[int]) -> int:
+    
+    arr_set = set(arr)
+    
+    counter = 0
+    
+    for x in arr:
         
-        arr_set = set(arr)
-        counter = 0
-        
-        for num in arr:
+        if x+1 in arr_set:
             
-            if num+1 in arr_set:
-                counter += 1
-                
-        return counter
+            counter += 1
+    
+    return counter
     
 
 import pytest
