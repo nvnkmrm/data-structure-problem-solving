@@ -10,7 +10,7 @@
 
 # You should only consider the players that have played at least one match.
 # The testcases will be generated such that no two matches will have the same outcome.
- 
+
 
 # Example 1:
 
@@ -29,7 +29,7 @@
 # Players 1, 2, 5, and 6 have not lost any matches.
 # Players 3 and 4 each have lost two matches.
 # Thus, answer[0] = [1,2,5,6] and answer[1] = [].
- 
+
 
 # Constraints:
 
@@ -43,24 +43,24 @@ from collections import defaultdict
 
 
 def findWinners(matches: list[list[int]]) -> list[list[int]]:
-        winners = defaultdict(int)
-        loosers = defaultdict(int)
+    winners = defaultdict(int)
+    loosers = defaultdict(int)
 
-        for match in matches:
-            winners[match[0]]+= 1
-            loosers[match[1]] += 1
-            
-        non_loosers = [winner for winner in winners.keys() if winner not in loosers]
-        exactly_one_loosers = [player for player,looses in loosers.items() if looses == 1]
-        
-        return [sorted(non_loosers), sorted(exactly_one_loosers)]
-    
+    for match in matches:
+        winners[match[0]] += 1
+        loosers[match[1]] += 1
+
+    non_loosers = [winner for winner in winners.keys() if winner not in loosers]
+    exactly_one_loosers = [player for player, looses in loosers.items() if looses == 1]
+
+    return [sorted(non_loosers), sorted(exactly_one_loosers)]
+
 
 import pytest
 
 
 @pytest.mark.parametrize(
-    'matches, expected',
+    "matches, expected",
     [
         # Example 1 from problem statement
         (
@@ -78,7 +78,6 @@ import pytest
             ],
             [[1, 2, 10], [4, 5, 7, 8]],
         ),
-
         # Example 2 from problem statement
         (
             [
@@ -89,7 +88,6 @@ import pytest
             ],
             [[1, 2, 5, 6], []],
         ),
-
         # Single match
         (
             [
@@ -97,7 +95,6 @@ import pytest
             ],
             [[1], [2]],
         ),
-
         # Linear chain of wins
         # 1 -> 2 -> 3 -> 4
         (
@@ -108,7 +105,6 @@ import pytest
             ],
             [[1], [2, 3, 4]],
         ),
-
         # One player defeats multiple players
         (
             [
@@ -119,7 +115,6 @@ import pytest
             ],
             [[1], [2, 3, 4, 5]],
         ),
-
         # Players with more than one loss should not appear
         (
             [
@@ -130,7 +125,6 @@ import pytest
             ],
             [[1, 2, 3, 5], [6]],
         ),
-
         # Winner can also lose matches
         (
             [
@@ -140,7 +134,6 @@ import pytest
             ],
             [[1, 4], [3]],
         ),
-
         # Every player loses exactly once except the first winner
         (
             [
@@ -152,7 +145,6 @@ import pytest
             ],
             [[10], [20, 30, 40, 50, 60]],
         ),
-
         # Unsorted input should still return sorted output
         (
             [
@@ -163,7 +155,6 @@ import pytest
             ],
             [[1, 3, 7, 8], [2, 4, 5, 6]],
         ),
-
         # Boundary values from constraints
         (
             [
@@ -172,7 +163,6 @@ import pytest
             ],
             [[1, 99999], [2, 100000]],
         ),
-
         # Player wins and loses multiple times
         (
             [

@@ -28,7 +28,7 @@
 # Explanation:
 # We can make one copy of "aaaaa" by taking the letters at indices 0, 3, 6, 9, and 12.
 # We can make at most one copy of "aaaaa", so we return 1.
- 
+
 # Constraints:
 # 1 <= s.length <= 100
 # 1 <= target.length <= 10
@@ -36,74 +36,66 @@
 
 from collections import Counter
 
+
 def rearrange_characters(s: str, target: str) -> int:
     s_counter = Counter(s)
     target_counter = Counter(target)
     ans = 100
 
-    for char,count in target_counter.items():
-        ans = min(ans, s_counter[char]//count)
+    for char, count in target_counter.items():
+        ans = min(ans, s_counter[char] // count)
     return ans
+
 
 import pytest
 
 
 @pytest.mark.parametrize(
-    's, target, expected',
+    "s, target, expected",
     [
         # Problem examples
-        ('ilovecodingonleetcode', 'code', 2),
-        ('abcba', 'abc', 1),
-        ('abbaccaddaeea', 'aaaaa', 1),
-
+        ("ilovecodingonleetcode", "code", 2),
+        ("abcba", "abc", 1),
+        ("abbaccaddaeea", "aaaaa", 1),
         # Exact match
-        ('abc', 'abc', 1),
-        ('aaaa', 'aaaa', 1),
-
+        ("abc", "abc", 1),
+        ("aaaa", "aaaa", 1),
         # Multiple copies
-        ('abcabcabc', 'abc', 3),
-        ('aaaaaa', 'aa', 3),
-        ('zzzzzzzz', 'zz', 4),
-
+        ("abcabcabc", "abc", 3),
+        ("aaaaaa", "aa", 3),
+        ("zzzzzzzz", "zz", 4),
         # Target contains duplicate characters
-        ('aaaaaa', 'aaa', 2),
-        ('aabbcc', 'abc', 2),
-        ('aabbcc', 'aabb', 1),
-        ('aaaabbbbcccc', 'abc', 4),
-        ('aaaabbbbcccc', 'aabbcc', 2),
-
+        ("aaaaaa", "aaa", 2),
+        ("aabbcc", "abc", 2),
+        ("aabbcc", "aabb", 1),
+        ("aaaabbbbcccc", "abc", 4),
+        ("aaaabbbbcccc", "aabbcc", 2),
         # Missing required characters
-        ('abc', 'abcd', 0),
-        ('aaaa', 'b', 0),
-        ('xyz', 'abc', 0),
-
+        ("abc", "abcd", 0),
+        ("aaaa", "b", 0),
+        ("xyz", "abc", 0),
         # Limited by one character count
-        ('aabbccc', 'abc', 2),      # limited by a and b
-        ('aaabbbcc', 'abc', 2),     # limited by c
-        ('aaaabbbccc', 'aabc', 2),  # requires two a's per target
-
+        ("aabbccc", "abc", 2),  # limited by a and b
+        ("aaabbbcc", "abc", 2),  # limited by c
+        ("aaaabbbccc", "aabc", 2),  # requires two a's per target
         # Single character target
-        ('aaaaa', 'a', 5),
-        ('bbbbbb', 'b', 6),
-        ('cccc', 'd', 0),
-
+        ("aaaaa", "a", 5),
+        ("bbbbbb", "b", 6),
+        ("cccc", "d", 0),
         # Extra characters in s should be ignored
-        ('abcxyzxyz', 'abc', 1),
-        ('aabbccxyzxyz', 'abc', 2),
-
+        ("abcxyzxyz", "abc", 1),
+        ("aabbccxyzxyz", "abc", 2),
         # Constraint boundary: minimum lengths
-        ('a', 'a', 1),
-        ('a', 'b', 0),
-
+        ("a", "a", 1),
+        ("a", "b", 0),
         # Constraint boundary: maximum s length (100)
-        ('a' * 100, 'a', 100),
-        ('a' * 100, 'aa', 50),
-
+        ("a" * 100, "a", 100),
+        ("a" * 100, "aa", 50),
         # Constraint boundary: maximum target length (10)
-        ('abcdefghij', 'abcdefghij', 1),
-        ('abcdefghijabcdefghij', 'abcdefghij', 2),
-        ('a' * 100, 'aaaaaaaaaa', 10),  # target length = 10
-    ]
+        ("abcdefghij", "abcdefghij", 1),
+        ("abcdefghijabcdefghij", "abcdefghij", 2),
+        ("a" * 100, "aaaaaaaaaa", 10),  # target length = 10
+    ],
 )
 def test_rearrange_characters(s: str, target: str, expected: int):
     assert rearrange_characters(s, target) == expected

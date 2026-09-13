@@ -1,31 +1,29 @@
-
-
 # Given a 2D array nums that contains n arrays of distinct integers, return a sorted array containing all the numbers that appear in all n arrays.
 
 # For example, given nums = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]], return [3, 4]. 3 and 4 are the only numbers that are in all arrays.
 
 from collections import defaultdict
 
+
 def intersection(nums: list[list[int]]) -> list[int]:
-    
+
     count = defaultdict(int)
-    
+
     for arr in nums:
         for num in arr:
-            count[num]+=1
-    
+            count[num] += 1
+
     ans = []
     n = len(nums)
-    
+
     for key in count:
-        
+
         if count[key] == n:
             ans.append(key)
-        
+
     return sorted(ans)
-        
-            
-    
+
+
 import pytest
 
 

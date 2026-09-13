@@ -4,17 +4,19 @@
 
 # Retry - 1
 
+
 def x_in_nums(nums: list[int]) -> list[int]:
-    
+
     nums_set = set(nums)
     ans = []
-    
+
     for x in nums_set:
-        
-        if (x+1 not in nums_set) and (x-1 not in nums_set):
+
+        if (x + 1 not in nums_set) and (x - 1 not in nums_set):
             ans.append(x)
-    
+
     return ans
+
 
 import pytest
 
@@ -24,31 +26,22 @@ import pytest
     [
         # Single isolated number
         ([5], [5]),
-
         # No isolated numbers
         ([1, 2, 3, 4, 5], []),
-
         # Isolated numbers at both ends
         ([1, 3, 5], [1, 3, 5]),
-
         # Mixed consecutive and isolated numbers
         ([1, 2, 4, 6, 7], [4]),
-
         # Negative numbers
         ([-3, -1, 0, 1, 3], [-3, 3]),
-
         # Consecutive negative numbers
         ([-2, -1, 0, 2], [2]),
-
         # Duplicate values should not affect result (set conversion)
         ([1, 1, 1, 3, 3, 5], [1, 3, 5]),
-
         # Multiple isolated numbers with duplicates
         ([10, 10, 12, 14, 14, 16], [10, 12, 14, 16]),
-
         # Consecutive blocks with one isolated number
         ([1, 2, 3, 10, 20, 21, 22], [10]),
-
         # Large gaps between numbers
         ([100, 200, 300], [100, 200, 300]),
     ],

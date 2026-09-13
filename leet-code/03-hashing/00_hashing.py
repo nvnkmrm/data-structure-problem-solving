@@ -5,11 +5,11 @@ hash_map = {}
 hash_map = {1: 2, 5: 3, 7: 2}
 
 # Checking if a key exists: simply use the `in` keyword
-1 in hash_map # True
-9 in hash_map # False
+1 in hash_map  # True
+9 in hash_map  # False
 
 # Accessing a value given a key: use square brackets, similar to an array.
-hash_map[5] # 3
+hash_map[5]  # 3
 
 # Adding or updating a key: use square brackets, similar to an array.
 # If the key already exists, the value will be updated
@@ -22,7 +22,7 @@ hash_map[9] = 15
 del hash_map[9]
 
 # Get size
-len(hash_map) # 3
+len(hash_map)  # 3
 
 # Get keys: use .keys(). You can iterate over this using a for loop.
 keys = hash_map.keys()
@@ -37,10 +37,10 @@ for val in values:
 my_hash_map = {}
 
 my_hash_map[4] = 83
-print(my_hash_map[4]) # Prints 83
+print(my_hash_map[4])  # Prints 83
 
-print(4 in my_hash_map) # Prints True
-print(854 in my_hash_map) # Prints False
+print(4 in my_hash_map)  # Prints True
+print(854 in my_hash_map)  # Prints False
 
 my_hash_map[8] = 327
 my_hash_map[45] = 82523

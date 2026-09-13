@@ -24,23 +24,25 @@
 # 1 <= n <= 104
 # 0 <= nums[i] <= n
 # All the numbers of nums are unique.
- 
+
 
 # Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 
 # Retried 1
 
+
 def sum_of_natural_number(n: int) -> int:
-    return int(n*(n+1)/2)
+    return int(n * (n + 1) / 2)
+
 
 def missingNumber(nums: list[int]) -> int:
-    
+
     sum_of_n = sum_of_natural_number(len(nums))
-    
+
     for n in nums:
-        
+
         sum_of_n -= n
-    
+
     return sum_of_n
 
 
@@ -54,24 +56,19 @@ import pytest
         ([3, 0, 1], 2),
         ([0, 1], 2),
         ([9, 6, 4, 2, 3, 5, 7, 0, 1], 8),
-
         # Missing first number
         ([1], 0),
         ([1, 2, 3, 4], 0),
-
         # Missing last number (n)
         ([0], 1),
         ([0, 1, 2, 3], 4),
-
         # Missing number in the middle
         ([0, 2], 1),
         ([0, 1, 3], 2),
         ([0, 1, 2, 4, 5], 3),
-
         # Unsorted input
         ([4, 2, 1, 0], 3),
         ([5, 0, 1, 2, 4], 3),
-
         # Larger range
         ([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0], 11),
         ([11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], 0),

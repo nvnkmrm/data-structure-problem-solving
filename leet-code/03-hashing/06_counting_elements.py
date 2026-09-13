@@ -1,4 +1,4 @@
-# Given an integer array arr, count how many elements x there are, such that x + 1 is also in arr. 
+# Given an integer array arr, count how many elements x there are, such that x + 1 is also in arr.
 # If there are duplicates in arr, count them separately.
 
 # Example 1:
@@ -12,7 +12,7 @@
 # Input: arr = [1,1,3,3,5,5,7,7]
 # Output: 0
 # Explanation: No numbers are counted, cause there is no 2, 4, 6, or 8 in arr.
- 
+
 # Constraints:
 
 # 1 <= arr.length <= 1000
@@ -20,18 +20,19 @@
 
 # retry - 1
 
+
 def countElements(arr: list[int]) -> int:
-    
+
     arr_set = set(arr)
     counter = 0
-    
+
     for x in arr:
-        
-        if x+1 in arr_set:
+
+        if x + 1 in arr_set:
             counter += 1
-    
+
     return counter
-    
+
 
 import pytest
 
@@ -42,40 +43,28 @@ import pytest
         # Examples from the problem statement
         ([1, 2, 3], 2),
         ([1, 1, 3, 3, 5, 5, 7, 7], 0),
-
         # Single element
         ([1], 0),
-
         # Consecutive sequence
         ([1, 2, 3, 4, 5], 4),
-
         # Missing intermediate values
         ([1, 3, 5, 7], 0),
-
         # Duplicates counted separately
         ([1, 1, 2], 2),
-
         # Multiple duplicates counted separately
         ([1, 1, 2, 2, 3], 4),
-
         # All elements have x + 1 except the largest
         ([0, 1, 2, 3], 3),
-
         # Includes zero
         ([0, 0, 1], 2),
-
         # Unsorted input
         ([3, 1, 2], 2),
-
         # Large values near constraint boundary
         ([998, 999, 1000], 2),
-
         # Duplicate large values
         ([999, 999, 1000], 2),
-
         # No qualifying elements
         ([1000], 0),
-
         # Mixed values
         ([0, 2, 3, 5, 6, 7], 3),
     ],
