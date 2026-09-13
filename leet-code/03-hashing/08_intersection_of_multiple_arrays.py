@@ -7,22 +7,25 @@
 from collections import defaultdict
 
 def intersection(nums: list[list[int]]) -> list[int]:
-    count_map = defaultdict(int)
-
+    
+    count = defaultdict(int)
+    
     for arr in nums:
         for num in arr:
-            count_map[num] += 1
+            count[num]+=1
     
     ans = []
     n = len(nums)
-
-    for key in count_map:
-        if count_map[key] == n:
-            ans.append(key)
     
+    for key in count:
+        
+        if count[key] == n:
+            ans.append(key)
+        
     return sorted(ans)
-
-
+        
+            
+    
 import pytest
 
 
