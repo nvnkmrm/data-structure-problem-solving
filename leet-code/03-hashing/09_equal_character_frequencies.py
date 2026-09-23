@@ -35,6 +35,9 @@ def areOccurrencesEqual(s: str) -> bool:
     return len(set(char_map.values())) == 1
 
 
+# redid - 2
+
+
 def areOccurrencesEqual2(s: str) -> bool:
     return len(set(Counter(s).values())) == 1
 
