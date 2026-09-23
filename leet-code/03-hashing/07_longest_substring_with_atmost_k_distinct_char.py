@@ -5,26 +5,26 @@
 from collections import defaultdict
 
 
-# redid - 2
+# redid - 3
 def find_longest_substring(s: str, k: int) -> int:
-    count = defaultdict(int)
-    left = ans = 0
+    char_count = defaultdict(int)
+    left = 0
+    max_length = 0
 
     for right in range(len(s)):
+        char_count[s[right]] += 1
 
-        count[s[right]] += 1
+        while len(char_count) > k:
+            char_count[s[left]] -= 1
 
-        while len(count) > k:
-            count[s[left]] -= 1
-
-            if count[s[left]] == 0:
-                del count[s[left]]
+            if char_count[s[left]] == 0:
+                del char_count[s[left]]
 
             left += 1
 
-        ans = max(ans, right - left + 1)
+        max_length = max(max_length, right - left + 1)
 
-    return ans
+    return max_length
 
 
 import pytest
