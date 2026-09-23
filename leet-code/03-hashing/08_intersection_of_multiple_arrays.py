@@ -4,6 +4,8 @@
 
 from collections import defaultdict
 
+# redid - 4
+
 
 def intersection(nums: list[list[int]]) -> list[int]:
 
@@ -13,11 +15,10 @@ def intersection(nums: list[list[int]]) -> list[int]:
         for num in arr:
             count[num] += 1
 
-    ans = []
     n = len(nums)
+    ans = []
 
     for key in count:
-
         if count[key] == n:
             ans.append(key)
 
