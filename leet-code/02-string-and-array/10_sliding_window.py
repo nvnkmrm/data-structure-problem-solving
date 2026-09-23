@@ -18,54 +18,61 @@
 import pytest
 
 
-# Retried - 2
+# Retried - 3
 def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -> int:
     left = 0
-    curr = 0
     ans = 0
+    curr = 0
 
     for right in range(len(nums)):
         curr += nums[right]
+
         while curr > k:
             curr -= nums[left]
             left += 1
+
         ans = max(ans, right - left + 1)
+
     return ans
 
 
-@pytest.mark.parametrize("nums, k, expected", [
-    ([1, 1, 1, 3], 3, 3),
-    ([3, 2, 1, 3, 1, 1], 5, 3),
-    ([1, 1, 1, 1, 4], 4, 4),
-    ([1, 2, 3], 6, 3),
-    ([5, 5, 5], 3, 0),
-    ([5, 1, 1, 1], 3, 3),
-])
+@pytest.mark.parametrize(
+    "nums, k, expected",
+    [
+        ([1, 1, 1, 3], 3, 3),
+        ([3, 2, 1, 3, 1, 1], 5, 3),
+        ([1, 1, 1, 1, 4], 4, 4),
+        ([1, 2, 3], 6, 3),
+        ([5, 5, 5], 3, 0),
+        ([5, 1, 1, 1], 3, 3),
+    ],
+)
 def test_longest_subarray_with_sum_less_than_or_equal_to_k(nums, k, expected):
     assert longest_subarray_with_sum_less_than_or_equal_to_k(nums, k) == expected
-    
-    
-#------------------------------------------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------
+
 
 def longest_substring_atmost_k_zeros(nums: str, k: int) -> int:
-    
+
     left = 0
     curr = 0
     ans = 0
-    
+
     for right in range(len(nums)):
-        if nums[right] == '0':
-            curr+=1
-            
+        if nums[right] == "0":
+            curr += 1
+
         while curr > k:
-            if nums[left] == '0':
+            if nums[left] == "0":
                 curr -= 1
             left += 1
-        
+
         ans = max(ans, right - left + 1)
-    
+
     return ans
 
 
