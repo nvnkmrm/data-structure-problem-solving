@@ -18,17 +18,20 @@
 import pytest
 
 
-# Retried - 3
+# Retried - 4
 def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -> int:
+
     left = 0
-    ans = 0
     curr = 0
+    ans = 0
 
     for right in range(len(nums)):
+
         curr += nums[right]
 
         while curr > k:
-            curr -= nums[left]
+
+            curr -= nums[right]
             left += 1
 
         ans = max(ans, right - left + 1)
