@@ -31,7 +31,7 @@ def longest_subarray_with_sum_less_than_or_equal_to_k(nums: list[int], k: int) -
 
         while curr > k:
 
-            curr -= nums[right]
+            curr -= nums[left]
             left += 1
 
         ans = max(ans, right - left + 1)
