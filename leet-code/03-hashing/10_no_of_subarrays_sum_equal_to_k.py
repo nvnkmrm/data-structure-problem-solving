@@ -4,22 +4,22 @@
 
 from collections import defaultdict
 
-# redid - 4 - Medium
+# redid - 5 - Medium
 
 
 def no_of_subarrays(nums: list[int], k: int) -> int:
 
-    prefix = defaultdict(int)
-    prefix[0] = 1
-    curr_sum = 0
-    count = 0
+    counts = defaultdict(int)
+    counts[0] = 1
+    ans = curr = 0
 
     for num in nums:
-        curr_sum += num
-        count += prefix[curr_sum - k]
-        prefix[curr_sum] += 1
 
-    return count
+        curr += num
+        ans += counts[curr - k]
+        counts[curr] += 1
+
+    return ans
 
 
 import pytest
