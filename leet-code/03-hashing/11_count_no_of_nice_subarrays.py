@@ -7,13 +7,14 @@
 from collections import defaultdict
 
 
-# redid - 1
+# redid - 2
 def count_no_of_sub_arrays(nums: list[int], k: int) -> int:
     counts = defaultdict(int)
     counts[0] = 1
-    curr = ans = 0
+    ans = curr = 0
 
     for num in nums:
+
         curr += num % 2
         ans += counts[curr - k]
         counts[curr] += 1
