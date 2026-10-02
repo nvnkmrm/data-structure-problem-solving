@@ -19,15 +19,17 @@
 
 from collections import defaultdict
 
+# redid - 1
+
 
 def largest_unique_number(nums: list[int]) -> int:
     ans = -1
-    nums_count = defaultdict(int)
+    counts = defaultdict(int)
 
     for num in nums:
-        nums_count[num] += 1
+        counts[num] += 1
 
-    for key, value in nums_count.items():
+    for key, value in counts.items():
         if value == 1:
             ans = max(ans, key)
 
