@@ -41,19 +41,21 @@
 
 from collections import defaultdict
 
+#redid - 1
 
 def findWinners(matches: list[list[int]]) -> list[list[int]]:
+
     winners = defaultdict(int)
-    loosers = defaultdict(int)
+    losers = defaultdict(int)
 
     for match in matches:
         winners[match[0]] += 1
-        loosers[match[1]] += 1
+        losers[match[1]] += 1
 
-    non_loosers = [winner for winner in winners.keys() if winner not in loosers]
-    exactly_one_loosers = [player for player, looses in loosers.items() if looses == 1]
+    never_lost = [player for player in winners.keys() if player not in losers]
+    lost_once = [player for player in losers.keys() if losers[player] == 1]
 
-    return [sorted(non_loosers), sorted(exactly_one_loosers)]
+    return [sorted(never_lost), sorted(lost_once)]
 
 
 import pytest
