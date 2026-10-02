@@ -41,7 +41,8 @@
 
 from collections import defaultdict
 
-#redid - 1
+# redid - 1
+
 
 def findWinners(matches: list[list[int]]) -> list[list[int]]:
 
@@ -53,6 +54,23 @@ def findWinners(matches: list[list[int]]) -> list[list[int]]:
         losers[match[1]] += 1
 
     never_lost = [player for player in winners.keys() if player not in losers]
+    lost_once = [player for player in losers.keys() if losers[player] == 1]
+
+    return [sorted(never_lost), sorted(lost_once)]
+
+
+# Approach - 2 (Optimized)
+def findWinners2(matches: list[list[int]]) -> list[list[int]]:
+
+    players = set()
+    losers = defaultdict(int)
+
+    for winner, loser in matches:
+        players.add(winner)
+        players.add(loser)
+        losers[loser] += 1
+
+    never_lost = players - losers.keys()
     lost_once = [player for player in losers.keys() if losers[player] == 1]
 
     return [sorted(never_lost), sorted(lost_once)]
@@ -180,3 +198,4 @@ import pytest
 )
 def test_find_winners(matches: list[list[int]], expected: list[list[int]]):
     assert findWinners(matches) == expected
+    assert findWinners2(matches) == expected
